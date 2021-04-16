@@ -1,0 +1,25 @@
+.imag {
+    min-width: 100%;
+    height: 680px;
+    filter: blur(3px);
+}
+
+.nav-link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    font-stretch: ultra-condensed;
+}
+
+.active {
+    text-decoration: overline;
+}
+
+.navbar-brand {
+    font-family: "comic sans ms ", sans-serif;
+    border: 1px solid white;
+    font-size: large;
+    font-weight: 900;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-right: 15px;
+}
