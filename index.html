@@ -1,272 +1,843 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSATClubs</title>
-    
-    <script src="https://kit.fontawesome.com/dab481e3df.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <link rel="icon" href="img/favicon.png">
-    
+
+    <!-- favicon icon -->
+    <!-- style sheets and font icons -->
+
+    <link rel="stylesheet" type="text/css" href="style/theme-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="style/stylelitho.css">
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
+    <!-- revolution slider -->
+    <link rel="stylesheet" type="text/css" href="style/settings.css">
+    <link rel="stylesheet" type="text/css" href="style/layers.css">
+    <link rel="stylesheet" type="text/css" href="style/navigation.css">
+    <style id="fit-vids-style">
+        .fluid-width-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding: 0;
+        }
+        
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper object,
+        .fluid-width-video-wrapper embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href=""><img style="height:70%; width: 70%;" src="img/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><img style="height:70%; width: 70%;" src="img/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#signupPage">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link" data-toggle="modal" data-target="#signinPage">Sign in</a>
-            </li>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#signupPage">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" data-toggle="modal" data-target="#signinPage">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- carousel -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+            <li data-target="#slides" data-slide-to="3"></li>
+            <li data-target="#slides" data-slide-to="4"></li>
+            <li data-target="#slides" data-slide-to="5"></li>
+            <li data-target="#slides" data-slide-to="6"></li>
+            <li data-target="#slides" data-slide-to="7"></li>
         </ul>
-    </div>
-    </div>
-</nav>
-<!-- carousel -->
-<div id="slides" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class="active"></li>
-        <li data-target="#slides" data-slide-to="1"></li>
-        <li data-target="#slides" data-slide-to="2"></li>
-    </ul>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img  src="img/img1.jpg" class="prim">
-            <div class="carousel-caption">
-                <h1 class="display-2">INSATClubs</h1>
-                <h3>Where clubs gather.</h3>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/insat/106019176_1407704456094233_2166304195536098596_o.jpg" class="prim">
+                <div class="carousel-caption">
+                    <h1 class="display-2">INSATClubs</h1>
+                    <h3>Where clubs gather.</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/img2.JPG">
+            </div>
+            <div class="carousel-item">
+                <img src="img/img3.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="img/img1.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="img/insat/audito.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="img/insat/IMG_4901 (1).JPG">
+            </div>
+            <div class="carousel-item">
+                <img src="img/insat/IMG_20200224_154319_2-01 (1).jpeg">
+            </div>
+            <div class="carousel-item">
+                <img src="img/insat/insat4.jpg">
             </div>
         </div>
-        <div class="carousel-item" >
-            <img  src="img/img2.JPG">
-        </div>
-        <div class="carousel-item" >
-            <img  src="img/img3.jpg">
-        </div>
     </div>
-</div>
-<!-- Welcome message-->
-<div class="container-fluid padding" >
-    <div class="welcome text-center">
-        <hr class="my-4">
-        <div class="col-12">
-            <h1 class="display-4">Built with love.</h1>
-        </div>
-        <hr>
-        <div class=col-12>
-            <p class="lead">Welcome to the first tunisian website gathering a wide variety of clubs from all over our dear institute INSAT <i class="fa fa-heart" style="color:#e84545;"></i></p>
-        </div>
-    </div>
-</div>
-<!--Features-->
-<div class="container-fluid padding">
-    <div class="row text-center padding">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fa fa-code"></i>
-            <h3>Responsive</h3>
-            <p>Coded with the latest version of bootstrap.</p> 
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-check-circle"></i>
-            <h3>User-friendly</h3>
-            <p>Built to give you the best user experience.</p> 
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <i class="fas fa-users"></i>
-            <h3>Diverse</h3>
-            <p>More than 20 clubs already signed up.</p> 
-        </div>
-    </div>
-    <hr class="my-4">
-</div>
-<!--team announcement-->
-<div class="container-fluid padding" >
-    <div class="welcome text-center">
-        <div class="col-12">
-            <h1 class="display-4">Meet the Team</h1>
-        </div>
-        <hr>
-    </div>
-</div>
 
-<div class="container-fluid padding">
-    <div class="row padding">
-        <div class="col-md-3">
-            <div class="card">
-                <img  class="card-img-top" src="img/man.jfif">
-                <div class="card-body">
-                    <h4 class="card-title">Alaeddine Fattouch</h4>
-                    <p class="card-text">Software engineering student.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img  class="card-img-top" src="img/man.jfif">
-                <div class="card-body">
-                    <h4 class="card-title">Nader Ouerdiane</h4>
-                    <p class="card-text">Software engineering student.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img  class="card-img-top" src="img/man.jfif">
-                <div class="card-body">
-                    <h4 class="card-title">Farid Adwani</h4>
-                    <p class="card-text">Software engineering student.</p>
-                </div>
-    </div>
-</div>
-<div class="col-md-3">
-    <div class="card">
-        <img  class="card-img-top" src="img/man.jfif">
-            <div class="card-body">
-            <h4 class="card-title">Salem Hamdani</h4>
-            <p class="card-text">Software engineering student.</p>
-            </div>
-</div>
-    
-</div>
-</div>
-<hr class="my-4">
-</div>
-<!--Social Media-->
-<div class="container-fluid padding socials">
-    <div class="row text-center padding">
-        
-        <div class="col-12">
-            <h2>Connect</h2>
-        </div>
-        <div class="col-12 social padding">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-    </div>
-</div>
+    <!--Clubs-->
 
-<!--Footer-->
-<footer>
+    <div class="d-flex flex-row align-items-center justify-content-center text-center margin-5px-bottom">
+        <span class="w-200px h-3px bg-medium-gray"></span>
+        <div class="alt-font text-medium text-gradient-sky-blue-pink font-weight-500 padding-10px-lr">
+            <h2>Our Clubs</h2>
+        </div>
+        <span class="w-200px h-3px bg-medium-gray"></span>
+    </div>
+    <section class="overflow-visible cover-background wow animate__fadeIn" style="background-image: url('img/bg/pexels-gdtography-911738.jpg'); visibility: visible; animation-name: fadeIn;">
+        <div class="container ">
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center overlap-section">
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 md-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.2s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/Developer.png'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">Developer Student Club INSAT</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Computer Sciences</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-peacock-blue-crome-yellow"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">Developer Student Club INSAT</span>
+                                        <p class="text-white opacity-7">Developer Student Clubs train thousands of student developers globally and work with their communities to solve real-life problems.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 md-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.4s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/aerobotix.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">AeRobotiX INSAT</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Robotics and Aeromodelling</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-transparent-gradient-light-red-orange"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">AeRobotiX INSAT</span>
+                                        <p class="text-white opacity-7"> The AeRobotiX club is a scientific club which operates in the realization of robotic and automated applications.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/Android.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">INSAT Android Club</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Computer Sciences</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-yellowish-green-turquoise"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">INSAT Android Club</span>
+                                        <p class="text-white opacity-7">IAC is the first Android development club in Tunisia, formed by young Insatians experienced in this field.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/autoclub.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">AutoClub INSAT</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">automative field</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-light-purple-light-red"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">AutoClub INSAT</span>
+                                        <p class="text-white opacity-7">AutoClub INSAT is a university club whose goal is the organization of events and training related to the automotive world.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/ieee.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">IEEE Student Branch</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">biology, chemistry, automation, telecommunication, software engineering, and instrumentation</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-transparent-gradient-sky-blue-pink"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">IEEE Student Branch</span>
+                                        <p class="text-white opacity-7">IEEE INSAT sb consists of students from all degree courses: biology, chemistry, automation, telecommunication, software engineering, and instrumentation.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/Maintenance.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">INSAT Maintenance Club</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Automation and Industry</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-tussock-greenish-slate"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">INSAT Maintenance Club</span>
+                                        <p class="text-white opacity-7">the INSAT Maintenance Club (CIM) aims to complete the training of future engineers through industrial visits, professional training and applications in the field of automation
+                                        </p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/Press.png'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">INSAT Press</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Press</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-peacock-blue-crome-yellow"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">INSAT Press</span>
+                                        <p class="text-white opacity-7">The first university press club created in Tunisia. This page is dedicated for all INSATian students, and any university student more generally, in order to report the latest events to come or have taken place,
+                                            share information and make you discover all new news.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/Securinets.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">Securinets</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Computer Security</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-transparent-gradient-light-red-orange"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">Securinets</span>
+                                        <p class="text-white opacity-7">SECURINETS IS THE FIRST TUNISIAN ASSOCIATION TO BASE ALL OF ITS ACTIVITIES ON COMPUTER SECURITY. </p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/Theatro.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">Theatro INSAT</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Theatre</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-light-purple-light-red"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">Theatro INSAT</span>
+                                        <p class="text-white opacity-7">Cultural and event club at INSAT. The artistic and cultural domain interests us and specifically the theatrical which touches everyone.<a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/anim.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">Anim INSAT</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Animation</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-purple-magenta"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">Anim INSAT</span>
+                                        <p class="text-white opacity-7">Anim INSAT provides the best integration for newcomers and the most jovial atmosphere to endure the stress of studying.
+                                        </p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/symbio.png'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">Symbio INSAT</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Biology</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-gradient-magenta-orange-2"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">Symbio INSAT</span>
+                                        <p class="text-white opacity-7">Symbio is a biology club at INSAT. We offer industrial and ecological tours, but above all, we give students the chance to have training. We also have an event component.
+                                        </p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+                <!-- start rotate box item -->
+                <div class="col col-sm-8 wow animate__fadeIn" data-wow-delay="0.6s" style="margin-bottom:20px; visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <div class="rm-rotate-box text-center">
+                        <div class="flipper to-left">
+                            <div class="thumb-wrap">
+                                <div class="front overflow-hidden h-480px border-radius-20px overflow-hidden lg-h-450px" style="background-image:url('img/Clubs/cineradio.jpg'); background-position: center;">
+                                    <div class="opacity-medium-2 bg-gradient-extra-dark-gray-transparent"></div>
+                                    <div class="content-wrap padding-15px-lr">
+                                        <span class="text-white text-large letter-spacing-1px margin-10px-bottom text-uppercase alt-font d-inline-block font-weight-500">Ciné-Radio</span>
+                                        <span class="text-white opacity-6 text-medium text-uppercase letter-spacing-1-half alt-font d-block">Culture</span>
+                                    </div>
+                                </div>
+                                <div class="back border-radius-4px overflow-hidden">
+                                    <div class="overlay-bg bg-transparent-gradient-smoky-black"></div>
+                                    <div class="content-wrap padding-60px-all lg-padding-30px-lr md-padding-40px-lr xs-padding-30px-all">
+                                        <a href="#"><i class="fas fa-plus-circle icon-large text-white margin-35px-bottom"></i></a>
+                                        <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">Ciné-Radio</span>
+                                        <p class="text-white opacity-7">
+                                            Cultural and event club. We are working to give all Tunisian students the chance to be heard and to display their talents.</p>
+                                        <a href="#" class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end rotate box item -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product -->
+    <div class="d-flex flex-row align-items-center justify-content-center text-center margin-5px-bottom">
+        <span class="w-200px h-3px bg-medium-gray"></span>
+        <div class="alt-font text-medium text-gradient-sky-blue-pink font-weight-500 padding-10px-lr">
+            <h2>Our Products</h2>
+        </div>
+        <span class="w-200px h-3px bg-medium-gray"></span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 filter-content">
+                <ul class="product-listing shop-wrapper grid grid-5col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large text-center" style="position: relative; height: 300px;">
+                    <li class="grid-sizer"></li>
+                    <!-- start product item -->
+                    <li class="grid-item wow animate__fadeIn" style="position: absolute; left: 0%; top: 0px; animation: 0s ease 0s 1 normal none running none;">
+                        <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
+                            <div class="product-image">
+                                <a href="single-product.html">
+                                    <img src="img/Product/hoodie aer3.jpg" alt="" data-no-retina="">
+                                    <img class="hover-img" src="img/Product/hoodieaer2.jpg" alt="" data-no-retina="">
+                                </a>
+                                <div class="product-hover-details">
+                                    <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Add to cart</a>
+                                </div>
+                                <div class="product-hover-right padding-20px-tb padding-15px-right w-65px">
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Add to wishlist"><i class="feather icon-feather-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
+                                <a href="single-product.html" class="text-extra-dark-gray text-black-hover font-weight-500 d-inline-block">Aerobotix Hoodie</a>
+                                <div class="product-price text-medium">35.000 DT</div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- end product item -->
+                    <!-- start product item -->
+                    <li class="grid-item wow animate__fadeIn" data-wow-delay="0.2s" style="position: absolute; left: 25%; top: 0px; animation: 0s ease 0s 1 normal none running none;">
+                        <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
+                            <div class="product-image">
+                                <a href="single-product.html">
+                                    <img src="img/Product/securinets.jpg" alt="" data-no-retina="">
+                                    <img class="hover-img" src="img/Product/securinets2.jpg" alt="" data-no-retina="">
+                                </a>
+                                <div class="product-hover-details">
+                                    <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Add to cart</a>
+                                </div>
+                                <div class="product-hover-right padding-20px-tb padding-15px-right w-65px">
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Add to wishlist"><i class="feather icon-feather-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
+                                <a href="single-product.html" class="text-extra-dark-gray text-black-hover font-weight-500 d-inline-block">Securinets Hoodie</a>
+                                <div class="product-price text-medium">35.000 DT</div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- end product item -->
+                    <!-- start product item -->
+                    <li class="grid-item wow animate__fadeIn" data-wow-delay="0.4s" style="position: absolute; left: 50%; top: 0px; animation: 0s ease 0s 1 normal none running none;">
+                        <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
+                            <div class="product-image">
+                                <a href="single-product.html">
+                                    <img src="img/Product/acm11.jpg" alt="" data-no-retina="">
+                                    <img class="hover-img" src="img/Product/acm2.jpg" alt="" data-no-retina="">
+                                </a>
+                                <div class="product-hover-details">
+                                    <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Add to cart</a>
+                                </div>
+                                <div class="product-hover-right padding-20px-tb padding-15px-right w-65px">
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Add to wishlist"><i class="feather icon-feather-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
+                                <a href="single-product.html" class="text-extra-dark-gray text-black-hover font-weight-500 d-inline-block">ACM Hoodie</a>
+                                <div class="product-price text-medium"><del>40.000 DT</del> 35.000 DT </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- end product item -->
+                    <!-- start product item -->
+                    <li class="grid-item wow animate__fadeIn" data-wow-delay="0.6s" style="position: absolute; left: 75%; top: 0px; animation: 0s ease 0s 1 normal none running none;">
+                        <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
+                            <div class="product-image">
+                                <a href="single-product.html">
+                                    <img src="img/Product/impr2.jpg" alt="" data-no-retina="">
+                                    <img class="hover-img" src="img/Product/impr1.jpg" alt="" data-no-retina="">
+                                </a>
+                                <div class="product-hover-details">
+                                    <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Add to cart</a>
+                                </div>
+                                <div class="product-hover-right padding-20px-tb padding-15px-right w-65px">
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
+                                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Add to wishlist"><i class="feather icon-feather-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
+                                <a href="single-product.html" class="text-extra-dark-gray text-black-hover font-weight-500 d-inline-block">Impression de pièces 3d</a>
+                                <div class="product-price text-medium"><del>2 DT par gramme </del> 1.5 DT par gramme</div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- end product item -->
+                </ul>
+            </div>
+            <div class="col-12 text-center margin-3-rem-top wow animate__fadeIn" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                <a href="shop-left-sidebar.html" class="btn btn-medium btn-fancy btn-transparent-black">More collection</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Welcome message-->
     <div class="container-fluid padding">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <img src="img/logo.png">
-                <hr class="light">
-                <p>+21624158769</p>
-                <p>email@insatclubs.com</p>
-
-            </div>
-            <div class="col-md-4">
-                <hr class="light">
-                <h5>Lorem Ipsum</h5>
-                <hr class="light">
-                <p>Lorem ipsum dolor sit amet</p>
-                <p>Lorem ipsum dolor sit amet</p>
-
-            </div>
-            <div class="col-md-4">
-                <hr class="light">
-                <h5>Lorem Ipsum</h5>
-                <hr class="light">
-                <p>Lorem ipsum dolor sit amet</p>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
+        <div class="welcome text-center">
+            <hr class="my-4">
             <div class="col-12">
-                <hr class="light-100">
-                <h5>&copy; insatclubs.com</h5>
+                <h1 class="display-4">Built with love.</h1>
             </div>
-
+            <hr>
+            <div class=col-12>
+                <p class="lead">Welcome to the first tunisian website gathering a wide variety of clubs from all over our dear institute INSAT <i class="fa fa-heart" style="color:#e84545;"></i></p>
+            </div>
         </div>
     </div>
-</footer>
-
-<!-- sign in -->
-<div class="modal fade" id="signinPage">
-
-    <div class="modal-dialog">
-      <div class="modal-content">
-        
-        <div class="modal-header text-center">
-          <h3 class="modal-title w-100 dark-grey-text font-weight-bold">Sign In</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+    <!--Features-->
+    <div class="container padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fa fa-code"></i>
+                <h3>Responsive</h3>
+                <p>Coded with the latest version of bootstrap.</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-check-circle"></i>
+                <h3>User-friendly</h3>
+                <p>Built to give you the best user experience.</p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <i class="fas fa-users"></i>
+                <h3>Diverse</h3>
+                <p>More than 20 clubs already signed up.</p>
+            </div>
         </div>
-  
-        <div class="modal-body mx-4">
-          <div class="md-form">
-            <input type="email" class="form-control validate">
-            <label data-error="wrong" data-success="right">Your Email</label>
-          </div>
-  
-          <div class="md-form">
-            <input type="password" class="form-control validate">
-            <label data-error="wrong" data-success="right">Your Password</label>
-            <p class="font-small blue-text d-flex justify-content-end"><a href="#" class="blue-text ml-1">Forgot Password?</a></p>
-          </div>
-  
-          <div class="text-center mb-3">
-            <button type="button" class="btn btn-primary btn-block z-depth-1a">Sign in</button>
-          </div>
-        
-          </div>
-        </div>
-      </div>
-      </div> 
-    
-<!-- Sign up-->
-<div class="modal fade" id="signupPage">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        
-        <div class="modal-header text-center">
-          <h4 class="modal-title text-center w-100 font-weight-bold">Sign Up</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" class="form-control validate">
-            <label data-error="wrong" data-success="right">Your Name</label>
-          </div>
-
-          <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" class="form-control validate">
-            <label data-error="wrong" data-success="right">Your Email</label>
-          </div>
-
-
-          <div class="md-form mb-5">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" class="form-control validate">
-            <label data-error="wrong" data-success="right">Your Password</label>
-          </div>
-        </div>
-
-        <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-primary btn-block z-depth-1a">Sign up</button>
-        </div>
-      </div>
+        <hr class="my-4">
     </div>
-  </div>
+    <!--team announcement-->
+    <div class="container-fluid padding">
+        <div class="welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Meet the Team</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container padding">
+        <div class="row padding">
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center">
+                <!-- start team member -->
+                <div class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="img/Team/Nader.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">Nader Ourdiane</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+                <!-- start team member -->
+                <div class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="img/Team/Ala.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">AlaEddine Fattouch</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+                <!-- start team member -->
+                <div class="col team-style-01 text-center xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="img/Team/Farid.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">Farid Adwani</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+                <!-- start team member -->
+                <div class="col team-style-01 text-center wow animate__fadeIn" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="img/Team/Salem.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">Salem Hamdani</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+            </div>
+            <!--Social Media-->
+
+        </div>
+        <hr class="my-4">
+    </div>
+    <!--Social Media-->
+    <div class="container-fluid padding socials">
+        <div class="row text-center padding">
+
+            <div class="col-12">
+                <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="img/logo.png">
+                    <hr class="light">
+                    <p>+21624158769</p>
+                    <p>email@insatclubs.com</p>
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Lorem Ipsum</h5>
+                    <hr class="light">
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet</p>
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Lorem Ipsum</h5>
+                    <hr class="light">
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5>&copy; insatclubs.com</h5>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- sign in -->
+    <div class="modal fade" id="signinPage">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold">Sign In</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+
+                <div class="modal-body mx-4">
+                    <div class="md-form">
+                        <input type="email" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                    </div>
+
+                    <div class="md-form">
+                        <input type="password" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                        <p class="font-small blue-text d-flex justify-content-end"><a href="#" class="blue-text ml-1">Forgot Password?</a></p>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-primary btn-block z-depth-1a">Sign in</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign up-->
+    <div class="modal fade" id="signupPage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h4 class="modal-title text-center w-100 font-weight-bold">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <input type="text" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Name</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                    </div>
+
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                    </div>
+                </div>
+
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary btn-block z-depth-1a">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>
+
+<script src="https://kit.fontawesome.com/dab481e3df.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
