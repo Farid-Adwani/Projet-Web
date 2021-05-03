@@ -18,12 +18,12 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <li><a class="nav-link scrollto active" href="index.html">HomePage</a></li>
-                <li><a class="nav-link scrollto" href="#tabs">Info</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="#tabs">News</a></li>
                 <li class="dropdown"><a class="nav-link" href="#">More</a>
                     <ul>
-                        <li><a class="nav-link" href="actualites.php">News</a></li>
-                        <li><a class="nav-link" href="emplois-du-temps.php">Schedule</a></li>
+                        <li><a class="nav-link" href="actualites.php">Info</a></li>
+                        <li><a class="nav-link" href="emplois-du-temps.php"><Contact></Contact></a></li>
+                        <li><a class="nav-link" href="actualites.php">Sittings</a></li>
                     </ul>
                 </li>
             </ul>
@@ -56,7 +56,7 @@
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile1" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +69,6 @@
             <div class="col-md-4">
                 <div class="profile-work">
                     <p>Expertises <input type="submit" class="expertise-edit-btn" name="btnAddMore" value="Edit"/></p>
-
                     <a href="">Web Development</a><br/>
                     <a href="">Algorithms</a><br/>
                     <p>Links <input type="submit" class="expertise-edit-btn" name="btnAddMore" value="Edit"/></p>
@@ -85,54 +84,18 @@
                     <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="linkedin" viewBox="0 0 16 16">
                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                         </svg></a>
-
+                    <p>Email <br/><a href="#">email@gmail.com</a></p>
+                    <p>Tel <br/><a href="#">+21652.....</a></p>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="tab-content profile-tab" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>User Id</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Kshiti123</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Name</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Kshiti Ghelani</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Email</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>kshitighelani@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>123 456 7890</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Profession</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Web Developer and Designer</p>
-                            </div>
-                        </div>
+                        <h3>Description</h3>
+                        <p>Our club was founded ..... </p>
+
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Experience</label>
