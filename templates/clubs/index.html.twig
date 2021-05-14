@@ -1,0 +1,332 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://kit.fontawesome.com/dab481e3df.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/theme-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="style/stylelitho.css">
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
+    <!-- revolution slider -->
+    <link rel="stylesheet" type="text/css" href="style/settings.css">
+    <link rel="stylesheet" type="text/css" href="style/layers.css">
+    <link rel="stylesheet" type="text/css" href="style/navigation.css">
+    <style id="fit-vids-style">
+        .fluid-width-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding: 0;
+        }
+
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper object,
+        .fluid-width-video-wrapper embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+
+    <!-- carousel -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+            <li data-target="#slides" data-slide-to="3"></li>
+            <li data-target="#slides" data-slide-to="4"></li>
+            <li data-target="#slides" data-slide-to="5"></li>
+            <li data-target="#slides" data-slide-to="6"></li>
+            <li data-target="#slides" data-slide-to="7"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/insat/106019176_1407704456094233_2166304195536098596_o.jpg" class="prim">
+                <div class="carousel-caption">
+                    <h1 class="display-2">INSATClubs</h1>
+                    <h3>Where clubs gather.</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/img/img2.JPG">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/img3.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/img1.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/insat/audito.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/insat/IMG_4901 (1).JPG">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/insat/IMG_20200224_154319_2-01 (1).jpeg">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/insat/insat4.jpg">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Welcome message-->
+    <div class="container-fluid padding">
+        <div class="welcome text-center">
+            <hr class="my-4">
+            <div class="col-12">
+                <h1 class="display-4">Built with love.</h1>
+            </div>
+            <hr>
+            <div class=col-12>
+                <p class="lead">Welcome to the first tunisian website gathering a wide variety of clubs from all over our dear institute INSAT <i class="fa fa-heart" style="color:#e84545;"></i></p>
+            </div>
+        </div>
+    </div>
+    <!--Features-->
+    <div class="container padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fa fa-code"></i>
+                <h3>Responsive</h3>
+                <p>Coded with the latest version of bootstrap.</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-check-circle"></i>
+                <h3>User-friendly</h3>
+                <p>Built to give you the best user experience.</p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <i class="fas fa-users"></i>
+                <h3>Diverse</h3>
+                <p>More than 20 clubs already signed up.</p>
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+    <!--team announcement-->
+    <div class="container-fluid padding">
+        <div class="welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Meet the Team</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container padding">
+        <div class="row padding">
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center">
+                <!-- start team member -->
+                <div class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="/img/Team/Nader.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">Nader Ourdiane</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+                <!-- start team member -->
+                <div class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="/img/Team/Ala.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">AlaEddine Fattouch</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+                <!-- start team member -->
+                <div class="col team-style-01 text-center xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="/img/Team/Farid.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">Farid Adwani</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+                <!-- start team member -->
+                <div class="col team-style-01 text-center wow animate__fadeIn" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeIn;">
+                    <figure class="border-radius-5px">
+                        <div class="team-member-image">
+                            <img alt="" src="/img/Team/Salem.jpg" data-no-retina="">
+                            <div class="team-overlay bg-transparent-gradient-shamrock-green-light-orange"></div>
+                        </div>
+                        <figcaption class="align-items-center justify-content-center d-flex flex-column padding-20px-lr padding-30px-tb">
+                            <span class="team-title d-block alt-font text-white">Salem Hamdani</span>
+                            <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
+                            <div class="social-icon w-100 position-absolute bottom-30px left-0px">
+                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- end team member -->
+            </div>
+            <!--Social Media-->
+
+        </div>
+        <hr class="my-4">
+    </div>
+    <!--Social Media-->
+    <div class="container-fluid padding socials">
+        <div class="row text-center padding">
+
+            <div class="col-12">
+                <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="/img/logo.png">
+                    <hr class="light">
+                    <p>+21624158769</p>
+                    <p>email@insatclubs.com</p>
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Lorem Ipsum</h5>
+                    <hr class="light">
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet</p>
+
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Lorem Ipsum</h5>
+                    <hr class="light">
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5>&copy; insatclubs.com</h5>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- sign in -->
+    <div class="modal fade" id="signinPage">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold">Sign In</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+
+                <div class="modal-body mx-4">
+                    <div class="md-form">
+                        <input type="email" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                    </div>
+
+                    <div class="md-form">
+                        <input type="password" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                        <p class="font-small blue-text d-flex justify-content-end"><a href="#" class="blue-text ml-1">Forgot Password?</a></p>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-primary btn-block z-depth-1a">Sign in</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign up-->
+    <div class="modal fade" id="signupPage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h4 class="modal-title text-center w-100 font-weight-bold">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <input type="text" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Name</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Email</label>
+                    </div>
+
+
+                    <div class="md-form mb-5">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" class="form-control validate">
+                        <label data-error="wrong" data-success="right">Your Password</label>
+                    </div>
+                </div>
+
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary btn-block z-depth-1a">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
