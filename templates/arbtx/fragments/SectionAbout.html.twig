@@ -1,0 +1,204 @@
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+
+    <!-- ======= About Me ======= -->
+    <div class="about-me container">
+
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Learn more about us</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3" data-aos="fade-right">
+
+                <img id="logo" src="/img/Clubs/Aerobotix/logoaerobotix.jpeg" alt="">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <h3>We are the Robotic and Aeronotic Pole in the INSAT</h3>
+                <p class="fst-italic">
+                    AeRobotiX club is a scientific club that operates in the realization of robotic and automated applications.
+                </p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 2010</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Slogan:</strong> <span>Learn Create Innovate</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>95 555 555</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>North Urban Center, Tunis</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>11 Years</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Working Hours:</strong> <span>from 8 Am to 7 Pm</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Registration fees:</strong> <span>25 DT</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>other information:</strong> <span>.......</span></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    The AeRobotiX club is a non-profit science club.
+                    It is the result of the merger of the Mechatronics and Embedded Orders clubs of INSAT.
+                    AeRobotiX operates in the realization of robotic and automated applications having utility in vital areas such as industry, home automation, aeronautics, automotive and security.
+                    In addition, AeRobotiX has a glorious history of its regular participation in national and international competitions, particularly in the field of robotics.
+                    AeRobotiX offers its members excellent technical training, accompanied by exceptional managerial experience.
+                    Through the various club activities, the member strengthens his academic training at INSAT through real confrontations with members of his team and professionals working with our club.          </p>
+            </div>
+        </div>
+
+    </div><!-- End About Me -->
+
+    <!-- ======= Counts ======= -->
+    <div class="counts container">
+
+        <div class="row">
+
+            {% set Counts = [
+                {'nom':'National competitions','number':'142','class':'bi-list-check'},
+            {'nom':'International competitions','number':'19','class':'bi-globe'},
+            {'nom':'Members','number':'98','class':'bi-people-fill'},
+            {'nom':'Awards','number':'96','class':'bi-award'}]%}
+            {{ include('arbtx/fragments/count.html.twig',{'table':Counts}) }}
+
+        </div>
+
+    </div><!-- End Counts -->
+
+    <!-- ======= Domains  ======= -->
+    <div class="skills container">
+
+        <div class="section-title">
+            <h2>Fields</h2>
+        </div>
+
+        <div class="row skills-content">
+            {% set Fields = [
+                {'nom':'Robotic','pourcentage':'100%'},
+                {'nom':'Aeronotic','pourcentage':'100%'},
+                {'nom':'Industry','pourcentage':'90%'},
+                {'nom':'Electronic','pourcentage':'95%'},
+                {'nom':'Algorithm','pourcentage':'80%'},
+                {'nom':'Social','pourcentage':'75%'} ]%}
+            {{ include('arbtx/fragments/field.html.twig',{'table':Fields}) }}
+        </div>
+
+    </div><!-- End Skills -->
+
+
+    <!-- ======= Testimonials ======= -->
+    <div class="testimonials container">
+
+        <div class="section-title">
+            <h2>Executive Board</h2>
+        </div>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                {%  set Staff=[
+                    {'nom':'MED YASSINE KOUBAA','description':' An ambitious and a hard worker
+            engineering student who is
+            around for the 4th year as
+            member in the club.
+            He is an all-rounder and the one
+            to go to for help. He loves coming
+            up with new ideas and learning
+            new tricks and he is always open
+            for new technologies       ','poste':'Technical Vice President','img':"/img/Clubs/Aerobotix/board/vpt.png"},
+                    {'nom':'YASSMINE BEN AMEUR','description':'A wise and hospitable
+                            engineer. She has a genius
+                            for solving problems.
+                            Her love to technological
+                            innovation and robotics
+                            in particular led her to join
+                            AeRobotix INSAT or
+                            "the paradise" and "the family"
+                            as she calls it.','poste':'President','img':"/img/Clubs/Aerobotix/board/prez.png"},
+                    {'nom':'WAFA ABID','description':'An ambitious and enthusiastic
+                            engineering student. She is
+                            passionate about robotics
+                            and embedded systems.
+                            Her experience and regulation
+                            made her a good fit in her new
+                            position.        ','poste':'Administrative Vice President','img':"/img/Clubs/Aerobotix/board/vpa.png"},
+                    {'nom':'AMIRA BEZINE','description':' A software engineering student,
+                            an enthusiastic and innovative
+                            mind. Besides her passion for
+                            robotics, she has a good experience
+                            in the media and a great talent
+                            for creating and designing.
+                            She is proud of being one of
+                            Aerobotix family members . ','poste':'Media','img':"/img/Clubs/Aerobotix/board/media.png"},
+                    {'nom':'NOURCHENE BARGUAOUI','description':"A brave and sociable engineer.
+                            She is crazy enough to think
+                            she can change the world.
+                            Joining the Aerobotix's family
+                was one of the best choices
+                she has made.
+                Her strategy was to focus on
+                the members and to build a very
+                strong connection with them. ",'poste':'Human Ressource','img':"/img/Clubs/Aerobotix/board/rh.png"},
+                    {'nom':'ALA EDDINE KRAIEM','description':"A adventurous engineering student
+                            who has been an eurobot team
+                            member for 2 years.
+                            He's an electronics expert and a
+                        dreamer. He always comes up with
+                        crazy ideas and that's what makes
+                            him special. When it comes to
+                            projects, he never messes around. ",'poste':'Exposition','img':"/img/Clubs/Aerobotix/board/expo.png"},
+                    {'nom':'HAZAR BOUGHANMI','description':'An ambitious and driven
+                            engineer who always thrives
+                            on challenges and constantly
+                            set goals for herself.
+                            She has always something to strive
+                            toward. She finds this pressure
+                            inspiring and a great motivator
+                            for the rest of the members.','poste':'Drone Manager','img':"/img/Clubs/Aerobotix/board/drone.png"},
+                    {'nom':'AWNI MEJRI','description':' An ambitious and systematic
+                            industrial automation engineer
+                            who has a great passion for
+                            learning and discovering.
+                            He loves working on robotics
+                            as well as developing himself. ','poste':'Material Manager','img':"/img/Clubs/Aerobotix/board/mater.png"},
+                    {'nom':'AZIZ BEN GANDIA','description':'A second year chemersty student
+                            who is so passionate about
+                            robotics. He has a good yet
+                            strange way of communicating.
+                            He is great at convincing
+                            and debating. Being a member
+                            of Aerobotix family was one
+                            of his best decisions.  ','poste':'Sponsoring','img':"/img/Clubs/Aerobotix/board/sponso.png"},
+                    {'nom':'MOHAMED LOUKIL','description':"A driven, aspiring engineer
+                            who has been tracking
+                            planes with a laptop's
+                        radar from his house's
+                            roof since his childhood.
+                            His dream is joining one
+                            of the most influential
+                            aeronautics and space
+                            companies around the world. ",'poste':'Aeromodelisme Manager','img':"/img/Clubs/Aerobotix/board/aeromod.png"},
+                    {'nom':'MAROUENE KAANICHE','description':"A persevering and commited
+                            engineer. He's full of spirit
+                and energy and will always
+                preform at his best.
+                He he seeks to help our newcomers
+                land their first steps towards
+                a brightful career as robotics
+                enthusiasts .",'poste':'Training Manager','img':"/img/Clubs/Aerobotix/board/formation.png"}
+                ] %}
+                {{ include('arbtx/fragments/Staff.html.twig',{'table':Staff}) }}
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="owl-carousel testimonials-carousel">
+
+        </div>
+
+    </div><!-- End Testimonials  -->
+
+</section><!-- End About Section -->

@@ -1,0 +1,14 @@
+{% for valeur in table %}
+<div class="swiper-slide">
+    <div class="testimonial-item">
+        <p>
+            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+           {{ valeur['description'] }}
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+        </p>
+        <img src={{ valeur['img'] }} class="testimonial-img" alt="">
+        <h3>{{ valeur['nom'] }}</h3>
+        <h4>{{ valeur['poste'] }}</h4>
+    </div>
+</div><!-- End testimonial item -->
+{% endfor %}

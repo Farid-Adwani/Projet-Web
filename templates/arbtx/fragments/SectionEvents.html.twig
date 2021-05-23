@@ -1,0 +1,34 @@
+<!-- ======= Events Section ======= -->
+<section id="portfolio" class="portfolio events">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Main Events</h2>
+            <p>Our Events</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-training">Training</li>
+                    <li data-filter=".filter-competition">Competitions</li>
+                    <li data-filter=".filter-hicking">Hickings</li>
+                </ul>
+            </div>
+        </div>
+        {% set Events = [
+            {'name':'Tunisian Aeroday','description':'National day of Aeronotic','img1':"/img/Clubs/Aerobotix/events/aeroday.jpg",'filter':'filter-competition','img2':"/img/Clubs/Aerobotix/events/aeroday.jpg"},
+            {'name':'CAO Training Session','description':'Learning Conception Assisted by Computer','img1':"/img/Clubs/Aerobotix/events/cao.jpg",'filter':'filter-training','img2':"/img/Clubs/Aerobotix/events/cao.jpg"},
+            {'name':'Robolympix','description':'Robotic Competition','img1':"/img/Clubs/Aerobotix/events/roblym.jpg",'filter':'filter-competition','img2':"/img/Clubs/Aerobotix/events/robolympix.jpg"},
+            {'name':'Arduino Training Session','description':'Learning Arduino','img1':"/img/Clubs/Aerobotix/events/arduino.jpg",'filter':'filter-training','img2':"/img/Clubs/Aerobotix/events/arduino.jpg"},
+            {'name':'Hicking','description':'Hicking To Bizerte','img1':"/img/Clubs/Aerobotix/events/randonnee.jpg",'filter':'filter-hicking','img2':"/img/Clubs/Aerobotix/events/randonnee.jpg"},
+            {'name':'Drone Training Session','description':'Learning how to make drones','img1':"/img/Clubs/Aerobotix/events/fdrone.png",'filter':'filter-competition','img2':"/img/Clubs/Aerobotix/events/fdrone.png"},
+            {'name':'STM32 Training Session','description':'Learning STM32','img1':"/img/Clubs/Aerobotix/events/stm32.jpg",'filter':'filter-training','img2':"/img/Clubs/Aerobotix/events/stm32.jpg"},
+            {'name':'Electronics Training Session','description':'Learning How to make Electronic Boards','img1':"/img/Clubs/Aerobotix/events/electronique.png",'filter':'filter-training','img2':"/img/Clubs/Aerobotix/events/electronique.png"},
+            {'name':'Raspberry Training Session','description':'Learning Raspberry','img1':"/img/Clubs/Aerobotix/events/raspberry.png",'filter':'filter-training','img2':"/img/Clubs/Aerobotix/events/raspberry.png"}
+
+        ]%}
+
+        {{ include('arbtx/fragments/productItem.html.twig',{'table':Events}) }}
+    </div>
+</section><!-- End Portfolio Section -->

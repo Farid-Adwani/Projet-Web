@@ -1,0 +1,32 @@
+<!-- carousel -->
+<div id="slides" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        {% for valeur in [{'id':'0','class':'active'},{'id':'1','class':''},{'id':'2','class':''},{'id':'3','class':''},{'id':'4','class':''},{'id':'5','class':''},{'id':'6','class':''},{'id':'7','class':''}] %}
+            <li data-target="#slides" data-slide-to={{ valeur['id']}} class={{ valeur['class']}}></li>
+        {% endfor %}
+
+    </ul>
+
+    <div class="carousel-inner">
+    {% for valeur in [{'img':"/img/insat/106019176_1407704456094233_2166304195536098596_o.jpg",'class':"active"},
+        {'img':"/img/img1.JPG",'class':""},
+        {'img':"/img/img2.JPG",'class':""},
+        {'img':"/img/img3.JPG",'class':""},
+        {'img':"/img/insat/audito.jpg",'class':""},
+        {'img':"/img/insat/IMG_4901.JPG",'class':""},
+        {'img':"/img/insat/IMG_20200224_154319_2-01.jpeg",'class':""},
+        {'img':"/img/insat/insat4.jpg",'class':""}] %}
+
+
+        <div class="carousel-item  {{ valeur['class']}} ">
+            <img  style="height: 600px;" src={{ valeur['img']}} class="prim">
+            <div class="carousel-caption">
+                <h1 class="display-2">INSATClubs</h1>
+                <h3>Where clubs gather.</h3>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+</div>

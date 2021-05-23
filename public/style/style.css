@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
+
+
+
+
 html, body {
     height: 100%;
     width: 100%;
@@ -27,6 +31,7 @@ html, body {
     transform: translateY(-50%);
 }
 .prim{
+
     filter: blur(5px);
     -webkit-filter: blur(5px);    
 }

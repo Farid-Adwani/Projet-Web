@@ -1,55 +1,71 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="img/favicon.png">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block css %}
+
         <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-            <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-            <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-            <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-            <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-            <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link href="/assets/css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+              rel="stylesheet">
+    {% endblock %}
+    {% block favicon  %}
+        <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    {% endblock %}
 
-            <link href="/assets/css/style.css" rel="stylesheet">
-            <link rel="shortcut icon" href="../public/assets/img/Clubs/faviconClub.png" type="image/x-icon">
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-                    rel="stylesheet">
-
-            <!-- Vendor JS Files -->
-            <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
-            <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-            <script src="/assets/vendor/purecounter/purecounter.js"></script>
-            <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-            <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-            <!-- Template Main JS File   <script src="/assets/js/main.js"></script>-->
-
-            <header id="header"  class="header-top section-show">
-                <div class="container">
-                    <nav id="navbar" class="navbar">
-                        <a class="navbar-brand" href=""><img style="height:50%; width: 50%; max-height:90px;" src="/img/logo.png" alt=""></a>
-                        <ul>
-                            {% block navlinks %}
-                            <li><a class="nav-link active" href="/home">Home</a></li>
-                            <li><a class="nav-link" href="/clubs">Clubs</a></li>
-                            <li><a class="nav-link" href="/events">Events</a></li>
-                                <li><a class="nav-link" href="/products">Products</a></li>
-                            <li><a class="nav-link"  href="/signup">Sign Up</a></li>
-                            <li><a class="nav-link"  href="/login">Login</a></li>
-                            <li><a class="nav-link"  href="/contact">Contact</a></li>
-                            {% endblock %}
-                        </ul>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
-                    </nav><!-- .navbar -->
+</head>
 
 
-                </div>
-            </header>
-    </head>
+
 
     <body>
-        {% block body %}{% endblock %}
+    {% block header %}
+    <header id="header"  class="header-top section-show">
+
+        <div class="container">
+            <nav id="navbar" class="navbar ">
+                <a class="navbar-brand" href=""><img style="height:50%; width: 50%; max-height:90px;" src="/img/logo.png" alt=""></a>
+                <ul>
+                    {% block navlinks %}
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "home"  %}active{% endif %}" href={{ path('home')}}>Home </a></li>
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "account"  %}active{% endif %}" href={{ path('account')}}>Account</a></li>
+
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "clubs"  %}active{% endif %}" href={{ path('clubs')}}>Clubs</a></li>
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "events"  %}active{% endif %}" href={{ path('events')}}>Events</a></li>
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "products"  %}active{% endif %}" href={{ path('products')}}>Products</a></li>
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "signup"   %}active{% endif %}"  href={{ path('signup')}}>Sign Up</a></li>
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "login"  %}active{% endif %}"  href={{ path('login')}}>Login</a></li>
+                        <li><a class="nav-link {% if  app.request.attributes.get('_route') == "contact"  %}active{% endif %}"  href={{ path('contact')}}>Contact</a></li>
+                    {% endblock %}
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+
+        </div>
+    </header>
+    {%  endblock %}
+    {% block body %}{% endblock %}
+
     </body>
+
+{%  block JS %}
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+{%  endblock %}
 </html>
