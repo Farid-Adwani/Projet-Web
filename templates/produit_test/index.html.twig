@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitTestController!{% endblock %}
+
+{% block body %}
+
+    {% if produit==null %}
+    <div style="margin-top:100px" class="alert alert-danger">
+        Produit introuvable
+    </div>
+        {% else %}
+            <div style="margin-top: 100px" class="alert alert-success">
+                Produit {{ produit.getName() }} est {{ etat }}
+            </div>
+    {% endif %}
+
+    <div class="container ginlined-content">
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination">
+                {% set pages=(total/6)|round(0,'ceil') %}
+              {% for i in 1..pages %}
+                  <li class="page-item"><a class="page-link" href={{ path('all',{'page':i,'number':'6'}) }}>{{ i }}</a></li>
+              {% endfor %}
+                <li class="page-item"><a class="page-link" href={{ path('all',{'page':min(pages,app.request.attributes.get('page')+1),'number':'6'}) }}>Next</a></li>
+
+            </ul>
+        </nav></div>
+    {{  include('arbtx/fragments/SectionProducts.html.twig',{'table':Produits}) }}
+
+{% endblock %}

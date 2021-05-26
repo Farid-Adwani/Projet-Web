@@ -107,6 +107,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/data-fixtures" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

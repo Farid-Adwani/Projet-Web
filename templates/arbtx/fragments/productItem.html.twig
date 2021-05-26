@@ -1,8 +1,7 @@
 
 <div class="row portfolio-container">
+
 {% for valeur in table %}
-
-
     <div class="col-lg-4 col-md-6  portfolio-item {{ valeur['filter']}}">
         <div class="portfolio-wrap">
             <img Style="max-width: 100% ; min-width: 100% ; height: 300px" src={{ valeur['img1']}} class="img-fluid" alt="">
@@ -20,5 +19,6 @@
     </div>
 
     {%  endfor %}
+
 </div>
 

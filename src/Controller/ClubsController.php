@@ -36,11 +36,12 @@ class ClubsController extends AbstractController
     #[Route('/', name: 'landing')]
     public function index(): Response
     {
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('entring_game');
     }
 
     #[Route('/home', name: 'home')]
     public function home(): Response {
+      return  $this->redirectToRoute('entring_game');
         return $this->render('clubs/index.html.twig', []);
     }
 
