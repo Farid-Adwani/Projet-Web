@@ -44,7 +44,7 @@ class ProduitTestController extends AbstractController
             'Produits' => $Produits,
             'etat'=>'le nouveau produit ',
             'produit'=>$produit
-            ]);
+        ]);
     }
 
     #[Route('/delete/{produit}', name: 'delete')]
@@ -69,14 +69,23 @@ class ProduitTestController extends AbstractController
     {
         $total=$this->getDoctrine()->getRepository(Produit::class)->findAll();
         $total=count($total);
-
+        $pages=ceil($total/$number) ;
         $Produits=$this->getDoctrine()->getRepository(Produit::class)->findBy([],['Price'=>'desc'],$number,($page-1)*$number);
+        $minpage=max(1,$page-8);
+        $maxpage=min($pages,$page+8);
+        if($maxpage==$pages && ($maxpage-$minpage)<15 ){$minpage=max(1,$maxpage-16);}
+        if($minpage==1 && ($maxpage-$minpage)<15){$maxpage=min($pages,$minpage+16);}
+        if(($maxpage-$minpage)<16)  {$minpage=1; $maxpage=$pages;}
 
         return $this->render('produit_test/index.html.twig', [
             'Produits' => $Produits,
             'etat'=>'all affiché',
             'produit'=>null,
-            'total'=>$total
+            'total'=>$total,
+            'minpage'=>$minpage,
+            'maxpage'=>$maxpage,
+            'pages'=>$pages
+
         ]);
     }
 }

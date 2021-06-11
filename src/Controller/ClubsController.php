@@ -2,14 +2,47 @@
 
 namespace App\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+use \App\Entity\compteclub;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ClubsController extends AbstractController
 {
+
+    /**
+     *@Route("/addclub",name="addclub")
+     */
+    function addclub(EntityManagerInterface $mg): Response{
+
+        $club=new compteclub();
+        $club->setName('0');
+        $club->setImg1('0');
+        $club->setImg2('0');
+        $club->setBirthday(date("y-m-d"));
+        $club->setSlogan('0');
+                    $club->setPhone('0');
+                    $club->setCity('0');
+                    $club->setHours('0');
+                    $club->setFees('0');
+                    $club->setOtherInformation('0');
+                    $club->setDescription('0');
+                    $club->setAdress('0');
+                    $club->setEmail('0');
+                    $club->setVid1('0');
+                    $club->setVid2('0');
+                    $club->setFacebook("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
+                    $club->setInstagram("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
+                    $club->setTwitter("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
+                    $club->setLinkedin("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
+                    $club->setYoutube("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
+                    $mg->persist($club);
+                   $mg->flush();
+        return $this->render('clubs/vide.html.twig',[ 'title'=>"°VIDE°" ]);
+    }
+
 
 
     /**

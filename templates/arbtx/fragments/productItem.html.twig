@@ -1,22 +1,22 @@
 
 <div class="row portfolio-container">
 
-{% for valeur in table %}
-    <div class="col-lg-4 col-md-6  portfolio-item {{ valeur['filter']}}">
-        <div class="portfolio-wrap">
-            <img Style="max-width: 100% ; min-width: 100% ; height: 300px" src={{ valeur['img1']}} class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>{{ valeur['name']}}</h4>
-                <p>{{ valeur['description']}}</p>
-                <div class="portfolio-links">
-                    <a href={{ valeur['img2']}} data-gallery="portfolioGallery" class="portfolio-lightbox"
-                       title={{ valeur['name']}}><i class="bx bx-plus"></i></a>
-                    <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                       class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+    {% for valeur in table %}
+        <div class="col-lg-4 col-md-6  portfolio-item {{ valeur.name}}">
+            <div class="portfolio-wrap">
+                <img Style="max-width: 100% ; min-width: 100% ; height: 300px" src={{ valeur.img1}} class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>{{ valeur.name}}</h4>
+                    <p>{{ valeur.description}}</p>
+                    <div class="portfolio-links">
+                        <a href={{ valeur.img2}} data-gallery="portfolioGallery" class="portfolio-lightbox"
+                           title={{ valeur.name}}><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
+                           class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     {%  endfor %}
 

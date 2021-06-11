@@ -5,18 +5,18 @@ function startGame() {
     document.querySelector('#start').textContent="Replay";
     var reamining =document.querySelectorAll("#flip-card");
 
+    reamining.forEach(function (value) {
+        value.classList.toggle('do-flip');
+
+
+    });
+    setTimeout(function () {
         reamining.forEach(function (value) {
             value.classList.toggle('do-flip');
 
 
-    });
-        setTimeout(function () {
-            reamining.forEach(function (value) {
-                value.classList.toggle('do-flip');
-
-
-            });
-        },2000);
+        });
+    },2000);
 }
 
 function replay() {
@@ -24,11 +24,9 @@ function replay() {
 }
 
 document.addEventListener('click', function(event) {
-       var reamining =document.querySelectorAll("#flip-card").length;
-
     var flipped =document.querySelectorAll("#flip-card.do-flip .flip-card-back img");
     if (flipped.length<2){
-
+        var reamining =document.querySelectorAll("#flip-card").length;
         var tar = event.target.parentElement.parentElement;
         if (tar && tar.id == "flip-card" && (event.target.parentElement.id=="front")) {
 
@@ -47,26 +45,26 @@ document.addEventListener('click', function(event) {
                         flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
                         flipped['0'].parentElement.previousElementSibling.firstElementChild.src = '/img/goodjob1.gif';
                         flipped['1'].parentElement.previousElementSibling.firstElementChild.src = '/img/goodjob1.gif';
-                       if(reamining==2){
-                          reponse=prompt("congrats do you want to discover "+flipped['1'].attributes.getNamedItem('alt').textContent);
-                       if(reponse) window.location.href = '/club';}
-                    },1000);
+                        if(reamining==2)
+                            reponse=confirm("congrats do you want to discover rrrr "+flipped['1'].attributes.getNamedItem('alt').textContent);
+                        if(reponse) window.location.href = '/club';}
+                },1000);
 
 
-                }else{
-                    setTimeout(function () {
-                        flipped['0'].parentElement.parentElement.classList.toggle('do-flip');
-                        flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
-                    },1000);
+}else{
+    setTimeout(function () {
+        flipped['0'].parentElement.parentElement.classList.toggle('do-flip');
+        flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
+    },1000);
 
 
-                }
-            }
+}
+}
 
 
-        }
+}
 
-    }
+}
 
 
 });
