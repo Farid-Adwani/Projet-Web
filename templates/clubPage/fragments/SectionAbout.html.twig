@@ -12,39 +12,34 @@
         <div class="row">
             <div class="col-lg-3" data-aos="fade-right">
 
-                <img id="logo" src="/assets/img/Clubs/Aerobotix/logoaerobotix.jpeg" alt="">
+                <img id="logo" src={{ club.getImg1()}} alt="">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                <h3>We are the Robotic and Aeronotic Pole in the INSAT</h3>
+                <h3>{{ club.getOtherInformation()}}</h3>
                 <p class="fst-italic">
-                    AeRobotiX club is a scientific club that operates in the realization of robotic and automated applications.
+                    {{ club.getDescription()}}
                 </p>
                 <div class="row">
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 2010</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Slogan:</strong> <span>Learn Create Innovate</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>95 555 555</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>North Urban Center, Tunis</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ club.getBirthday()}}</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Slogan:</strong> <span>{{ club.getSlogan()}}</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ club.getPhone()}}</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ club.getCity()}}</span></li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>11 Years</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Working Hours:</strong> <span>from 8 Am to 7 Pm</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Registration fees:</strong> <span>25 DT</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>other information:</strong> <span>.......</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{ club.getBirthday()}}</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Working Hours:</strong> <span>{{ club.getHours()}}</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Registration fees:</strong> <span>{{ club.getFees()}}</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>other information:</strong> <span>{{ club.getOtherInformation()}}</span></li>
 
                         </ul>
                     </div>
                 </div>
                 <p>
-                    The AeRobotiX club is a non-profit science club.
-                    It is the result of the merger of the Mechatronics and Embedded Orders clubs of INSAT.
-                    AeRobotiX operates in the realization of robotic and automated applications having utility in vital areas such as industry, home automation, aeronautics, automotive and security.
-                    In addition, AeRobotiX has a glorious history of its regular participation in national and international competitions, particularly in the field of robotics.
-                    AeRobotiX offers its members excellent technical training, accompanied by exceptional managerial experience.
-                    Through the various club activities, the member strengthens his academic training at INSAT through real confrontations with members of his team and professionals working with our club.          </p>
+                    {{ club.getDescription()}}          </p>
             </div>
         </div>
 
@@ -55,12 +50,12 @@
 
         <div class="row">
 
-            {% set Counts = [
+            {#  set Counts = [
                 {'nom':'National competitions','number':'142','class':'bi-list-check'},
             {'nom':'International competitions','number':'19','class':'bi-globe'},
             {'nom':'Members','number':'98','class':'bi-people-fill'},
-            {'nom':'Awards','number':'96','class':'bi-award'}]%}
-            {{ include('clubPage/fragments/count.html.twig',{'table':Counts}) }}
+            {'nom':'Awards','number':'96','class':'bi-award'}]#}
+            {{ include('clubPage/fragments/count.html.twig',{}) }}
 
         </div>
 
@@ -74,14 +69,14 @@
         </div>
 
         <div class="row skills-content">
-            {% set Fields = [
+            {#  set Fields = [
                 {'nom':'Robotic','pourcentage':'100%'},
                 {'nom':'Aeronotic','pourcentage':'100%'},
                 {'nom':'Industry','pourcentage':'90%'},
                 {'nom':'Electronic','pourcentage':'95%'},
                 {'nom':'Algorithm','pourcentage':'80%'},
-                {'nom':'Social','pourcentage':'75%'} ]%}
-            {{ include('clubPage/fragments/field.html.twig',{'table':Fields}) }}
+                {'nom':'Social','pourcentage':'75%'} ]#}
+            {{ include('clubPage/fragments/field.html.twig',{}) }}
         </div>
 
     </div><!-- End Skills -->
@@ -97,7 +92,7 @@
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
 
-                {%  set Staff=[
+                {#   set Staff=[
                     {'nom':'MED YASSINE KOUBAA','description':' An ambitious and a hard worker
             engineering student who is
             around for the 4th year as
@@ -187,8 +182,8 @@
                 land their first steps towards
                 a brightful career as robotics
                 enthusiasts .",'poste':'Training Manager','img':"/assets/img/Clubs/Aerobotix/board/formation.png"}
-                ] %}
-                {{ include('clubPage/fragments/Staff.html.twig',{'table':Staff}) }}
+                ] #}
+                {{ include('clubPage/fragments/Staff.html.twig',{}) }}
 
 
             </div>

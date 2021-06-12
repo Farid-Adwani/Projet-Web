@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Entity\Produit;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,7 +14,7 @@ class ProduitTestController extends AbstractController
     #[Route('/add/{name}/{prix}', name: 'add')]
     public function add($name,$prix,EntityManagerInterface $mg): Response
     {
-        $produit=new Produit();
+        $produit=new Product();
         $produit->setName($name);
         $produit->setPrice($prix);
         $produit->setImg1('/assets/img/img2.jpg');
@@ -67,10 +68,10 @@ class ProduitTestController extends AbstractController
     #[Route('/all/{page<\d+>?1}/{number<\d+>?5}', name: 'all')]
     public function all($page,$number): Response
     {
-        $total=$this->getDoctrine()->getRepository(Produit::class)->findAll();
+        $total=$this->getDoctrine()->getRepository(Product::class)->findAll();
         $total=count($total);
         $pages=ceil($total/$number) ;
-        $Produits=$this->getDoctrine()->getRepository(Produit::class)->findBy([],['Price'=>'desc'],$number,($page-1)*$number);
+        $Produits=$this->getDoctrine()->getRepository(Product::class)->findBy([],['prix'=>'desc'],$number,($page-1)*$number);
         $minpage=max(1,$page-8);
         $maxpage=min($pages,$page+8);
         if($maxpage==$pages && ($maxpage-$minpage)<15 ){$minpage=max(1,$maxpage-16);}
@@ -78,7 +79,7 @@ class ProduitTestController extends AbstractController
         if(($maxpage-$minpage)<16)  {$minpage=1; $maxpage=$pages;}
 
         return $this->render('produit_test/index.html.twig', [
-            'Produits' => $Produits,
+            'products' => $Produits,
             'etat'=>'all affiché',
             'produit'=>null,
             'total'=>$total,

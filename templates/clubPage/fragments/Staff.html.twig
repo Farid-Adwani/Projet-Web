@@ -1,14 +1,14 @@
-{% for valeur in table %}
+{% for valeur in comites %}
 <div class="swiper-slide">
     <div class="testimonial-item">
         <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-           {{ valeur['description'] }}
+           {{ valeur.getDescription() }}
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
         </p>
-        <img src={{ valeur['img'] }} class="testimonial-img" alt="">
-        <h3>{{ valeur['nom'] }}</h3>
-        <h4>{{ valeur['poste'] }}</h4>
+        <img src={{ valeur.getImage() }} class="testimonial-img" alt="">
+        <h3>{{ valeur.getFullname() }}</h3>
+        <h4>{{ valeur.getRole() }}</h4>
     </div>
 </div><!-- End testimonial item -->
 {% endfor %}

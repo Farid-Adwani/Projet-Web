@@ -3,9 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Event;
+use App\Entity\Field;
 use App\Entity\Product;
+use App\Entity\Statistique;
+use App\Entity\User;
 use App\Repository\compteclubRepository;
 use App\Repository\ProductRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -68,9 +72,20 @@ class ClubsController extends AbstractController
     public function club($clubname, EntityManagerInterface $manager): Response
     {
         $club = $this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name' => $clubname]);
+        $statistiques = $this->getDoctrine()->getRepository(Statistique::class)->findAll();
+        $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
+        $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
+        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
 
         return $this->render('clubPage/index.html.twig', parameters: [
-            'club'=>$club
+            'comites'=>$comite,
+            'club'=>$club,
+            'statistiques'=>$statistiques,
+            'fields'=>$fields,
+            'events'=>$events,
+            'products'=>$products
+
         ]);
     }
 
@@ -81,7 +96,12 @@ class ClubsController extends AbstractController
 
     #[Route('/account', name: 'account')]
     public function account(): Response {
-        return $this->render('clubs/Account.html.twig', []);
+        $random=random_int(1,11);
+    $user=$this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=>$random]);
+
+        return $this->render('clubs/Account.html.twig', [
+            'user'=>$user
+        ]);
     }
 
     #[Route('/contact', name: 'contact')]

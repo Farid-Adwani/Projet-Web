@@ -1,4 +1,3 @@
-
 document.addEventListener('click', function(event) {
     var flipped;
     flipped = document.querySelectorAll("#flip-card.do-flip .flip-card-back img");
@@ -13,7 +12,8 @@ document.addEventListener('click', function(event) {
             var flipped =document.querySelectorAll("#flip-card.do-flip .flip-card-back img");
 
             if(flipped.length==2){
-                if(flipped['0'].attributes.getNamedItem('alt').textContent == flipped['1'].attributes.getNamedItem('alt').textContent) {
+
+                if(flipped['0'].nextElementSibling.textContent == flipped['1'].nextElementSibling.textContent) {
 
                     setTimeout(function () {
                         flipped['0'].parentElement.parentElement.id= "done";
@@ -22,15 +22,15 @@ document.addEventListener('click', function(event) {
                         flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
                         flipped['0'].parentElement.previousElementSibling.firstElementChild.src = '/assets/img/goodjob1.gif';
                         flipped['1'].parentElement.previousElementSibling.firstElementChild.src = '/assets/img/goodjob1.gif';
-                        if(reamining==2)
-                            reponse=confirm("Good Job ! , Do You Want To Discover "+flipped['1'].attributes.getNamedItem('alt').textContent);
-                        if(reponse){ window.location.href = '/club';}
-                },1000);}else{
-    setTimeout(function () {
-        flipped['0'].parentElement.parentElement.classList.toggle('do-flip');
-        flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
-    },1000);
-}}}}});
+                        if(reamining==2){
+                            reponse=confirm("Good Job ! , Do You Want To Discover "+flipped['1'].nextElementSibling.textContent);
+                        if(reponse){ window.location.href = '/club/'+flipped['1'].nextElementSibling.textContent;}}
+                    },1000);}else{
+                    setTimeout(function () {
+                        flipped['0'].parentElement.parentElement.classList.toggle('do-flip');
+                        flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
+                    },1000);
+                }}}}});
 
 function start() {
     document.querySelector('#letsplay').style.display='none';
@@ -42,8 +42,6 @@ function start() {
 
     reamining.forEach(function (value) {
         value.classList.toggle('do-flip');
-
-
     });
     setTimeout(function () {
         reamining.forEach(function (value) {

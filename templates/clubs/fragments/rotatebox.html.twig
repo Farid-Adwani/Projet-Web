@@ -22,7 +22,7 @@
                         <span class="text-white text-extra-medium letter-spacing-1px font-weight-500 text-uppercase alt-font d-block margin-10px-bottom">{{valeur.getName()}}</span>
                         <p class="text-white opacity-7">{{valeur.getDescription()   }}</p>
 
-                        <a href={{ path('club')}} class="btn btn-link thin btn-extra-large text-extra-dark-gray">Discover more</a>
+                        <a  class="btn btn-link thin btn-extra-large text-extra-dark-gray" href={{ path('club',{'clubname':valeur.getName()})}}>Discover more</a>
                     </div>
                 </div>
             </div>

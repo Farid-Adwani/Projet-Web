@@ -9,8 +9,8 @@
     <header id="header">
         <div class="container">
 
-            <h1><a href="index.html">AeRobotiX INSAT</a></h1>
-            <h2>We are the <span>Robotic and Aerobotic</span> Pole in the University</h2>
+            <h1><a href="index.html">{{ club.getName()}}</a></h1>
+            <h2>{{ club.getOtherInformation()}}</h2>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -26,19 +26,18 @@
             </nav><!-- .navbar -->
             <div class="social-links">
                 <div>
-                    <a  href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a  href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a  href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a  href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                    <a  href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+                    <a  href={{ club.getTwitter()}} class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a  href={{ club.getFacebook()}} class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a  href={{ club.getInstagram()}} class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a  href={{ club.getLinkedin()}} class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <a  href={{ club.getYoutube()}}class="youtube"><i class="bi bi-youtube"></i></a>
 
                 </div>
                 <div class="container embed-responsive embed-responsive-16by9">
-                    <iframe width="500" height="250" src="https://www.youtube.com/embed/kuhaB3JSSyA" title="YouTube video player"
-                            frameborder="0"
+                    <iframe width="500" height="250"  title="YouTube video player"   frameborder="0" src={{ club.getVid1()}}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                    <iframe width="500" height="250" src="https://www.youtube.com/embed/R_ZQ3Alqc3I" title="YouTube video player"
+                    <iframe width="500" height="250"  title="YouTube video player" src={{ club.getVid2()}}
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -64,11 +63,11 @@
 {% endblock %}
 
 {% block body %}
-    {{ include('clubPage/fragments/SectionAbout.html.twig',{'variable':'valeur'}) }}
-    {{ include('clubPage/fragments/SectionRegistration.html.twig',{'variable':'valeur'}) }}
-    {{ include('clubPage/fragments/SectionEvents.html.twig',{'variable':'valeur'}) }}
+    {{ include('clubPage/fragments/SectionAbout.html.twig',{}) }}
+    {{ include('clubPage/fragments/SectionRegistration.html.twig',{}) }}
+    {{ include('clubPage/fragments/SectionEvents.html.twig',{}) }}
     <section id="products" class="portfolio">
-        {{ include('clubPage/fragments/SectionProducts.html.twig',{'variable':'valeur'}) }}
+        {{ include('clubPage/fragments/SectionProducts.html.twig',{}) }}
     </section>
     {{ include('clubPage/fragments/SectionContact.html.twig',{'variable':'valeur'}) }}
 {% endblock %}

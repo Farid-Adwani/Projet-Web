@@ -48,6 +48,11 @@ class Product
      */
     private $club;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $filter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class Product
     public function setClub(?compteclub $club): self
     {
         $this->club = $club;
+
+        return $this;
+    }
+
+    public function getFilter(): ?string
+    {
+        return $this->filter;
+    }
+
+    public function setFilter(?string $filter): self
+    {
+        $this->filter = $filter;
 
         return $this;
     }

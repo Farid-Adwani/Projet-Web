@@ -16,6 +16,7 @@
                         </p>
                         <div class="collapse row" id="collapseExample">
                             {%  for club in clubsgame %}
+
                                 <div  class="col-sm-3 flip-card-3D-wrapper ">
                                     <div id="flip-card">
                                         <div class="flip-card-front " id="front">
@@ -23,7 +24,9 @@
 
                                         </div>
                                         <div class="flip-card-back ">
-                                            <img class="img-flip" src={{ club.getImg1()}} alt={{ club.getName()}}>
+                                            <img class="img-flip" alt="club"   src={{ club.getImg1()}}  >
+                                            <p style="display: none">{{ club.getName()}}</p>
+
                                         </div>
                                     </div>
                                 </div>

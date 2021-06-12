@@ -1,6 +1,8 @@
-{%   for valeur in products %}
+{%  set leftt=-25 %}
+{%   for valeur in productSection %}
+    {% set leftt=leftt+25 %}
     <!-- start product item -->
-    <li class="grid-item  wow animate__fadeIn" style="position: absolute; left: {{ valeur['left']}}; top: 0px; animation: 0s ease 0s 1 normal none running none;">
+    <li class="grid-item  wow animate__fadeIn" style="position: absolute; left:{{ leftt~"%" }}; top: 0px; animation: 0s ease 0s 1 normal none running none;">
         <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
             <div class="product-image">
                 <a href="single-product.html">
@@ -17,7 +19,7 @@
             </div>
             <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
                 <a href="single-product.html" class="text-extra-light-gray text-orange-hover font-weight-500 d-inline-block">{{ valeur.getName()}}</a>
-                <div class="product-price text-medium">{{ valeur.getPrice()}}</div>
+                <div class="product-price text-medium">{{ valeur.getPrix()}}</div>
             </div>
         </div>
     </li>

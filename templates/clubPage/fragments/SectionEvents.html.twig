@@ -16,7 +16,7 @@
                 </ul>
             </div>
         </div>
-        {% set Events = [
+        {#  set Events = [
             {'name':'Tunisian Aeroday','description':'National day of Aeronotic','img1':"/assets/img/Clubs/Aerobotix/events/aeroday.jpg",'filter':'filter-competition','img2':"/assets/img/Clubs/Aerobotix/events/aeroday.jpg"},
             {'name':'CAO Training Session','description':'Learning Conception Assisted by Computer','img1':"/assets/img/Clubs/Aerobotix/events/cao.jpg",'filter':'filter-training','img2':"/assets/img/Clubs/Aerobotix/events/cao.jpg"},
             {'name':'Robolympix','description':'Robotic Competition','img1':"/assets/img/Clubs/Aerobotix/events/roblym.jpg",'filter':'filter-competition','img2':"/assets/img/Clubs/Aerobotix/events/robolympix.jpg"},
@@ -27,8 +27,8 @@
             {'name':'Electronics Training Session','description':'Learning How to make Electronic Boards','img1':"/assets/img/Clubs/Aerobotix/events/electronique.png",'filter':'filter-training','img2':"/assets/img/Clubs/Aerobotix/events/electronique.png"},
             {'name':'Raspberry Training Session','description':'Learning Raspberry','img1':"/assets/img/Clubs/Aerobotix/events/raspberry.png",'filter':'filter-training','img2':"/assets/img/Clubs/Aerobotix/events/raspberry.png"}
 
-        ]%}
+        ]#}
 
-        {{ include('clubPage/fragments/productItem.html.twig',{'table':Events}) }}
+        {{ include('clubPage/fragments/productItem.html.twig',{'table':events}) }}
     </div>
 </section><!-- End Portfolio Section -->
