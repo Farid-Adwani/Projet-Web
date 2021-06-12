@@ -149,6 +149,11 @@ class compteclub
      */
     private $color;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="clubs")
+     */
+    private $users;
+
 
 
     public function __construct()
@@ -158,6 +163,7 @@ class compteclub
         $this->products = new ArrayCollection();
         $this->events = new ArrayCollection();
         $this->zeze = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -575,6 +581,33 @@ class compteclub
     public function setColor(?string $color): self
     {
         $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeClub($this);
+        }
 
         return $this;
     }
