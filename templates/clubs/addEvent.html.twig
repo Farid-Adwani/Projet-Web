@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}Add an event{% endblock %}
+{% block body %}
+
+    <div class="contact" style="padding-top: 100px">
+    <div class="container">
+
+    <div class="section-title">
+        <h2>Add an event</h2>
+    </div>
+        <div class="php-email-form mt-4">
+    {{ form_start(formEvent) }}
+    <div class="form-group mt-3">
+       {{ form_widget(formEvent.name) }}
+    </div>
+    <div class="form-group mt-3">
+        {{ form_widget(formEvent.img1) }}
+    </div>
+    <div class="form-group mt-3">
+        {{ form_widget(formEvent.img2)  }}
+    </div>
+    <div class="form-group mt-3">
+        {{ form_widget(formEvent.description) }}
+    </div>
+    <div class="form-group mt-3">
+        {{ form_widget(formEvent.filter) }}
+    </div>
+            <div class="text-center" style="margin-top: 30px;"><button type="submit">Add event</button></div>
+    {{ form_end(formEvent) }}
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}

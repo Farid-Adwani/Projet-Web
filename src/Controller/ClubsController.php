@@ -9,9 +9,13 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use \App\Entity\compteclub;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class ClubsController extends AbstractController
 {
@@ -92,7 +96,7 @@ class ClubsController extends AbstractController
 
     #[Route('/login', name: 'login')]
     public function login(): Response {
-                                                               return $this->render('clubs/login.html.twig', []);
+        return $this->render('clubs/login.html.twig', []);
     }
     #[Route('/signup', name: 'signup')]
     public function signup(): Response {
@@ -111,10 +115,52 @@ class ClubsController extends AbstractController
         return $this->render('clubs/products.html.twig', []);
     }
 
+
+    #[Route('/addevent', name: 'add-event')]
+    public function addevent(Request $request, EntityManagerInterface $manager): Response {
+        $event=new Event();
+        $form=$this->createFormBuilder($event)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
+            ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
+            ->add('img2', TextType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
+            ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
+            ->add('filter', TextType::class, ['attr' => ['placeholder'=>'filter', 'class'=> 'form-control']])
+            ->getForm();
+
+        $form->handleRequest($request);
+        if($form->isSubmitted()  && $form->isValid()) {
+            $event->setClub(null);
+            $manager->persist($event);
+            $manager->flush();
+            return $this->redirectToRoute('events');
+        }
+        return $this->render('clubs/addEvent.html.twig', ['formEvent' => $form->createView()]);
+    }
+
+    #[Route('/addproduct', name: 'add-product')]
+    public function addproduct(Request $request, EntityManagerInterface $manager): Response {
+        $product=new Product();
+        $form=$this->createFormBuilder($product)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
+            ->add('img1', FileType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
+            ->add('img2', FileType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
+            ->add('prix', TextType::class, ['attr' => ['placeholder'=>'prix', 'class'=> 'form-control']])
+            ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
+            ->getForm();
+
+        $form->handleRequest($request);
+        if($form->isSubmitted()  && $form->isValid()) {
+            $product->setClub(null);
+            $manager->persist($product);
+            $manager->flush();
+            return $this->redirectToRoute('products');
+        }
+        return $this->render('clubs/addProduct.html.twig', ['formProduct' => $form->createView()]);
+    }
+
     #[Route('/loaddata', name: 'loaddata')]
     public function loaddata(): Response
     {
 
     }
+
 
 }

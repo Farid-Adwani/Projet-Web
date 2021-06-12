@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}Add a product{% endblock %}
+{% block body %}
+
+    <div class="contact" style="padding-top: 100px">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Add a product</h2>
+            </div>
+            <div class="php-email-form mt-4">
+                {{ form_start(formProduct) }}
+                <div class="form-group mt-3">
+                    {{ form_widget(formProduct.name) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formProduct.img1) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formProduct.img2)  }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formProduct.prix) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formProduct.description) }}
+                </div>
+
+                <div class="text-center" style="margin-top: 30px;"><button type="submit">Add Product</button></div>
+                {{ form_end(formProduct) }}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
