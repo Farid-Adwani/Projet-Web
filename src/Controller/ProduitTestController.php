@@ -16,8 +16,8 @@ class ProduitTestController extends AbstractController
         $produit=new Produit();
         $produit->setName($name);
         $produit->setPrice($prix);
-        $produit->setImg1('/img/img2.jpg');
-        $produit->setImg2('/img/img2.jpg');
+        $produit->setImg1('/assets/img/img2.jpg');
+        $produit->setImg2('/assets/img/img2.jpg');
         $mg->persist($produit);
         $mg->flush();
         $Produits=$this->getDoctrine()->getRepository(Produit::class)->findAll();

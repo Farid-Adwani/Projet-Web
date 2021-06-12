@@ -18,8 +18,8 @@ class Produit extends Fixture
         for($i=0;$i<100;$i++){
             $objet=new compteclub();
             $objet->setName($faker->name);
-            $objet->setImg1("/img/img".$faker->numberBetween(1,3).".jpg");
-            $objet->setImg2("/img/img".$faker->numberBetween(1,3).".jpg");
+            $objet->setImg1("/assets/img/img".$faker->numberBetween(1,3).".jpg");
+            $objet->setImg2("/assets/img/img".$faker->numberBetween(1,3).".jpg");
             $objet->setBirthday(date("y-m-d"));
             $objet->setSlogan('0');
             $objet->setPhone('0');
@@ -44,16 +44,16 @@ class Produit extends Fixture
             $objet2=new Event();
             $objet2->setName($faker->name);
             $objet2->setDescription($faker->company);
-            $objet2->setImg1("/img/img".$faker->numberBetween(1,3).".jpg");
-            $objet2->setImg2("/img/img".$faker->numberBetween(1,3).".jpg");
+            $objet2->setImg1("/assets/img/img".$faker->numberBetween(1,3).".jpg");
+            $objet2->setImg2("/assets/img/img".$faker->numberBetween(1,3).".jpg");
             $objet2->setFilter("competetion");
 
            $objet3=new Product();
            $objet3->setName($faker->name);
             $objet3->setPrix($faker->numberBetween(2112,9856));
             $objet3->setDescription($faker->company);
-           $objet3->setImg1("/img/img".$faker->numberBetween(1,3).".jpg");
-           $objet3->setImg2("/img/img".$faker->numberBetween(1,3).".jpg");
+           $objet3->setImg1("/assets/img/img".$faker->numberBetween(1,3).".jpg");
+           $objet3->setImg2("/assets/img/img".$faker->numberBetween(1,3).".jpg");
 
 
 
