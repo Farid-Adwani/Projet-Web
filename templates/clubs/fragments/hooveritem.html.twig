@@ -1,25 +1,25 @@
-{%   for valeur in Hooveritems %}
-<!-- start product item -->
-<li class="grid-item  wow animate__fadeIn" style="position: absolute; left: {{ valeur['left']}}; top: 0px; animation: 0s ease 0s 1 normal none running none;">
-    <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
-        <div class="product-image">
-            <a href="single-product.html">
-                <img src={{ valeur['img1']}} alt="" data-no-retina="">
-                <img class="hover-img" src={{ valeur['img2']}} alt="" data-no-retina="">
-            </a>
-            <div class="product-hover-details">
-                <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Buy</a>
+{%   for valeur in products %}
+    <!-- start product item -->
+    <li class="grid-item  wow animate__fadeIn" style="position: absolute; left: {{ valeur['left']}}; top: 0px; animation: 0s ease 0s 1 normal none running none;">
+        <div class="product-box margin-10px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
+            <div class="product-image">
+                <a href="single-product.html">
+                    <img src={{ valeur.getImg1()}} alt="" data-no-retina="">
+                    <img class="hover-img" src={{ valeur.getImg2()}} alt="" data-no-retina="">
+                </a>
+                <div class="product-hover-details">
+                    <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Buy</a>
+                </div>
+                <div class="product-hover-right padding-20px-tb padding-15px-right w-65px">
+                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
+                    <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Add to wishlist"><i class="feather icon-feather-heart"></i></a>
+                </div>
             </div>
-            <div class="product-hover-right padding-20px-tb padding-15px-right w-65px">
-                <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Quick shop"><i class="feather icon-feather-zoom-in"></i></a>
-                <a href="#" class="product-link-icon move-top-bottom" data-toggle="tooltip" data-placement="left" title="" data-original-title="Add to wishlist"><i class="feather icon-feather-heart"></i></a>
+            <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
+                <a href="single-product.html" class="text-extra-light-gray text-orange-hover font-weight-500 d-inline-block">{{ valeur.getName()}}</a>
+                <div class="product-price text-medium">{{ valeur.getPrice()}}</div>
             </div>
         </div>
-        <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-            <a href="single-product.html" class="text-extra-light-gray text-orange-hover font-weight-500 d-inline-block">{{ valeur['name']}}</a>
-            <div class="product-price text-medium">{{ valeur['price']}}</div>
-        </div>
-    </div>
-</li>
-<!-- end product item -->
+    </li>
+    <!-- end product item -->
 {% endfor %}

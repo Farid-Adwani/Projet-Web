@@ -11,7 +11,7 @@
         <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center overlap-section">
 
 
-            {% set Rotateboxs = [
+        {#     {% set Rotateboxs = [
                 {'name':'Developer Student Club INSAT','description':'Developer Student Clubs train thousands of student developers globally and work with their communities to solve real-life problems.
 ','domain':'Computer Sciences','color':'bg-gradient-peacock-blue-crome-yellow','img':"/img/Clubs/Developer.png"},
                 {'name':'AeRobotiX INSAT','description':' The AeRobotiX club is a scientific club which operates in the realization of robotic and automated applications.
@@ -36,8 +36,10 @@
 ','domain':'Biology','color':'bg-gradient-magenta-orange-2','img':"/img/Clubs/symbio.png"},
                 {'name':'Ciné-Radio','description':'Cultural and event club. We are working to give all Tunisian students the chance to be heard and to display their talents.','domain':'Culture','color':'bg-transparent-gradient-smoky-black','img':"/img/Clubs/cineradio.jpg"}
 
-            ]%}
-            {{ include('clubs/fragments/rotatebox.html.twig',{'table':'Rotateboxs'}) }}
+            ]%} #}
+
+
+            {{ include('clubs/fragments/rotatebox.html.twig',{}) }}
 
         </div>
     </div>

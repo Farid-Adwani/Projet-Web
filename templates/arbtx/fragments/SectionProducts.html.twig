@@ -8,15 +8,6 @@
             <p>Our Products</p>
         </div>
 
-
-
-
-        {% set Produits = [
-            {'name':'Hoodie','description':'35 DT','img1':"/img/Clubs/Aerobotix/products/prod1.png",'filter':'','img2':"/img/Clubs/Aerobotix/products/prod1.png"},
-            {'name':'T-Shirt','description':'28 DT','img1':"/img/Clubs/Aerobotix/products/prod2.png",'filter':'','img2':"/img/Clubs/Aerobotix/products/prod2.png"},
-            {'name':'3D Impression','description':'2 DT for the 10 g','img1':"/img/Clubs/Aerobotix/products/prod3.png",'filter':'','img2':"/img/Clubs/Aerobotix/products/prod3.png"}
-        ]%}
-
         {{ include('arbtx/fragments/productItem.html.twig',{'table':Produits}) }}
 
 

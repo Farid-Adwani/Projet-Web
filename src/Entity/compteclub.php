@@ -139,6 +139,16 @@ class compteclub
      */
     private $Img2;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $domain;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $color;
+
 
 
     public function __construct()
@@ -541,6 +551,30 @@ class compteclub
                 $zeze->setErerz(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDomain(): ?string
+    {
+        return $this->domain;
+    }
+
+    public function setDomain(?string $domain): self
+    {
+        $this->domain = $domain;
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(?string $color): self
+    {
+        $this->color = $color;
 
         return $this;
     }

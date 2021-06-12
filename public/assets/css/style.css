@@ -11,7 +11,7 @@
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("assets/img/Clubs/Aerobotix/aerob2.png") top right no-repeat;
+  background: #040404 top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;

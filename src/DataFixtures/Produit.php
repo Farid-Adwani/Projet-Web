@@ -18,8 +18,8 @@ class Produit extends Fixture
         for($i=0;$i<100;$i++){
             $objet=new compteclub();
             $objet->setName($faker->name);
-            $objet->setImg1('0');
-            $objet->setImg2('0');
+            $objet->setImg1("/img/img".$faker->numberBetween(1,3).".jpg");
+            $objet->setImg2("/img/img".$faker->numberBetween(1,3).".jpg");
             $objet->setBirthday(date("y-m-d"));
             $objet->setSlogan('0');
             $objet->setPhone('0');
@@ -37,6 +37,9 @@ class Produit extends Fixture
             $objet->setTwitter("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
             $objet->setLinkedin("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
             $objet->setYoutube("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
+            $objet->setColor("dark");
+            $objet->setDomain($faker->domainName);
+
 
             $objet2=new Event();
             $objet2->setName($faker->name);
@@ -56,6 +59,8 @@ class Produit extends Fixture
 
 
 
+            $mg->persist($objet);
+            $mg->persist($objet2);
 
             $mg->persist($objet3);
         }

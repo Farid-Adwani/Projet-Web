@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %}  Insat Clubs {% endblock %}
 {% block css %}
 {{ parent() }}
     <link rel="stylesheet" href="/style/style.css">
@@ -20,6 +21,8 @@
             position: absolute; top: 0;left: 0;width: 100%;height: 100%;
         }
     </style>
+
+
 {% endblock %}
 {% block JS %}
     {{ parent() }}
@@ -41,10 +44,9 @@
 
 
     {{ include('entring_game/index.html.twig',{'variable':'valeur'}) }}
-
     {{ include('clubs/fragments/caroussel.html.twig',{'variable':'valeur'}) }}
     {{ include('clubs/fragments/welcome.html.twig',{'variable':'valeur'}) }}
-    {{ include('clubs/fragments/rebriqueclubs.html.twig',{'variable':'valeur'}) }}
+    {{ include('clubs/fragments/rebriqueclubs.html.twig',{}) }}
     {{ include('clubs/fragments/rebriquepruducts.html.twig',{'variable':'valeur'}) }}
     {{ include('clubs/fragments/team.html.twig',{'variable':'valeur'}) }}
     {{ include('clubs/fragments/media.html.twig',{'variable':'valeur'}) }}

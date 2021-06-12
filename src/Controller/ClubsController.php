@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Event;
+use App\Entity\Product;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use \App\Entity\compteclub;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,40 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ClubsController extends AbstractController
 {
-
-    /**
-     *@Route("/addclub",name="addclub")
-     */
-    function addclub(EntityManagerInterface $mg): Response{
-
-        $club=new compteclub();
-        $club->setName('0');
-        $club->setImg1('0');
-        $club->setImg2('0');
-        $club->setBirthday(date("y-m-d"));
-        $club->setSlogan('0');
-                    $club->setPhone('0');
-                    $club->setCity('0');
-                    $club->setHours('0');
-                    $club->setFees('0');
-                    $club->setOtherInformation('0');
-                    $club->setDescription('0');
-                    $club->setAdress('0');
-                    $club->setEmail('0');
-                    $club->setVid1('0');
-                    $club->setVid2('0');
-                    $club->setFacebook("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
-                    $club->setInstagram("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
-                    $club->setTwitter("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
-                    $club->setLinkedin("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
-                    $club->setYoutube("https://www.youtube.com/watch?v=Ap-SZHJF8wU");
-                    $mg->persist($club);
-                   $mg->flush();
-        return $this->render('clubs/vide.html.twig',[ 'title'=>"°VIDE°" ]);
-    }
-
-
-
     /**
     *@Route("/vide",name="vide")
      */
@@ -69,13 +39,45 @@ class ClubsController extends AbstractController
     #[Route('/', name: 'landing')]
     public function index(): Response
     {
-        return $this->redirectToRoute('entring_game');
+        $products=$this->getDoctrine()->getRepository(Product::class)->findAll();
+        $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
+        $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
+
+        $clubpur=[];
+        shuffle($clubs);
+        shuffle($products);
+        shuffle($events);
+        $productSection=array_merge($products);
+        $eventSection=array_merge($events);
+        $clubSection=array_merge($clubs);;
+
+        $eventSection=array_splice($eventSection,0,9);
+        $clubSection= array_splice($clubSection,0,7);
+        $productSection=array_splice($productSection,0,4);
+        $indices=[];
+        $indices=range(0,5);
+        $indices=array_merge($indices,$indices);
+        shuffle($indices);
+
+        foreach ($indices as $indice){
+            array_push($clubpur,$clubs[$indice]);
+        }
+
+        return $this->render('clubs/index.html.twig', [
+            'eventSection'=>$eventSection,
+            'productSection'=>$productSection,
+            'clubSection'=>$clubSection,
+            'clubsgame'=>$clubpur,
+            'produits'=>$products,
+            'clubs'=>$clubs,
+            'events'=>$events
+        ]);
     }
+
 
     #[Route('/home', name: 'home')]
     public function home(): Response {
-      return  $this->redirectToRoute('entring_game');
-        return $this->render('clubs/index.html.twig', []);
+      return  $this->redirectToRoute('landing');
     }
 
     #[Route('/account', name: 'account')]
@@ -90,7 +92,7 @@ class ClubsController extends AbstractController
 
     #[Route('/login', name: 'login')]
     public function login(): Response {
-        return $this->render('clubs/login.html.twig', []);
+                                                               return $this->render('clubs/login.html.twig', []);
     }
     #[Route('/signup', name: 'signup')]
     public function signup(): Response {
@@ -109,5 +111,10 @@ class ClubsController extends AbstractController
         return $this->render('clubs/products.html.twig', []);
     }
 
+    #[Route('/loaddata', name: 'loaddata')]
+    public function loaddata(): Response
+    {
+
+    }
 
 }
