@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %} Aerobotix {% endblock %}
+{% block title %}   {{  club.name }} {% endblock %}
 {% block favicon%}
-    <link rel="shortcut icon" href="/img/Clubs/faviconClub.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/Clubs/faviconClub.png" type="image/x-icon">
 {% endblock %}
 
 {% block header %}
@@ -64,11 +64,11 @@
 {% endblock %}
 
 {% block body %}
-    {{ include('arbtx/fragments/SectionAbout.html.twig',{'variable':'valeur'}) }}
-    {{ include('arbtx/fragments/SectionRegistration.html.twig',{'variable':'valeur'}) }}
-    {{ include('arbtx/fragments/SectionEvents.html.twig',{'variable':'valeur'}) }}
+    {{ include('clubPage/fragments/SectionAbout.html.twig',{'variable':'valeur'}) }}
+    {{ include('clubPage/fragments/SectionRegistration.html.twig',{'variable':'valeur'}) }}
+    {{ include('clubPage/fragments/SectionEvents.html.twig',{'variable':'valeur'}) }}
     <section id="products" class="portfolio">
-        {{ include('arbtx/fragments/SectionProducts.html.twig',{'variable':'valeur'}) }}
+        {{ include('clubPage/fragments/SectionProducts.html.twig',{'variable':'valeur'}) }}
     </section>
-    {{ include('arbtx/fragments/SectionContact.html.twig',{'variable':'valeur'}) }}
+    {{ include('clubPage/fragments/SectionContact.html.twig',{'variable':'valeur'}) }}
 {% endblock %}

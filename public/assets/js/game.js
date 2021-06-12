@@ -20,8 +20,8 @@ document.addEventListener('click', function(event) {
                         flipped['1'].parentElement.parentElement.id= "done";
                         flipped['0'].parentElement.parentElement.classList.toggle('do-flip');
                         flipped['1'].parentElement.parentElement.classList.toggle('do-flip');
-                        flipped['0'].parentElement.previousElementSibling.firstElementChild.src = '/img/goodjob1.gif';
-                        flipped['1'].parentElement.previousElementSibling.firstElementChild.src = '/img/goodjob1.gif';
+                        flipped['0'].parentElement.previousElementSibling.firstElementChild.src = '/assets/img/goodjob1.gif';
+                        flipped['1'].parentElement.previousElementSibling.firstElementChild.src = '/assets/img/goodjob1.gif';
                         if(reamining==2)
                             reponse=confirm("Good Job ! , Do You Want To Discover "+flipped['1'].attributes.getNamedItem('alt').textContent);
                         if(reponse){ window.location.href = '/club';}
