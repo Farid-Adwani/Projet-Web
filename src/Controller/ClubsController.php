@@ -8,6 +8,7 @@ use App\Entity\Product;
 use App\Entity\Statistique;
 use App\Entity\User;
 use App\Repository\compteclubRepository;
+use App\Repository\EventRepository;
 use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -115,17 +116,36 @@ class ClubsController extends AbstractController
     }
 
     #[Route('/clubs', name: 'clubs')]
-    public function clubs(): Response {
-        return $this->render('clubs/clubs.html.twig', []);
+    public function clubs(compteclubRepository $repo,Request  $request): Response
+    {
+
+        $clubs=$repo->findAll();
+
+
+        return $this->render('clubs/clubs.html.twig', [
+            'clubs' => $clubs,
+
+        ]);
     }
+
     #[Route('/events', name: 'events')]
-    public function events(): Response {
-        return $this->render('clubs/events.html.twig', []);
+    public function events(EventRepository $repo): Response {
+        $events=$repo->findAll();
+        return $this->render('clubs/events.html.twig', [
+            'events' => $events
+
+        ]);
     }
+
     #[Route('/products', name: 'products')]
-    public function products(): Response {
-        return $this->render('clubs/products.html.twig', []);
+    public function products(ProductRepository $repo): Response {
+        $products=$repo->findAll();
+        return $this->render('clubs/products.html.twig', [
+            'products' => $products
+
+        ]);
     }
+
     #[Route('/clubinfo', name: 'clubinfo')]
     public function clubinfo(EntityManagerInterface $manager, Request $request): Response {
         $this->denyAccessUnlessGranted('ROLE_CLUB');
