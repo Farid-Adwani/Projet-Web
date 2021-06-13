@@ -95,6 +95,7 @@ class ClubsController extends AbstractController
     public function account(): Response {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
+
         $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
         $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
 
