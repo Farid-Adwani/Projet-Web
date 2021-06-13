@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Event;
 use App\Entity\Field;
 use App\Entity\Product;
+use App\Entity\Publication;
 use App\Entity\Statistique;
 use App\Entity\User;
 use App\Repository\compteclubRepository;
@@ -15,6 +16,7 @@ use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use \App\Entity\compteclub;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -117,6 +119,31 @@ class ClubsController extends AbstractController
     #[Route('/clubs', name: 'clubs')]
     public function clubs(): Response {
         return $this->render('clubs/clubs.html.twig', []);
+    }
+    #[Route('/newsfeed', name: 'newsfeed')]
+    public function newsfeed(): Response {
+        return $this->render('clubs/newsfeed.html.twig', []);
+    }
+    #[Route('/post', name: 'post')]
+    public function post(EntityManagerInterface $manager, Request $request): Response {
+        $this->denyAccessUnlessGranted('ROLE_CLUB');
+        $user=$this->getUser();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$user->getClubname()]);
+        $pub=new Publication();
+        $form=$this->createFormBuilder($pub)->add('title', TextType::class, ['attr' => ['placeholder'=>'title', 'class'=> 'form-control']])
+            ->add('content', TextareaType::class, ['attr' => ['placeholder'=>'content', 'class'=> 'form-control']])
+            ->add('image', TextType::class, ['attr' => ['placeholder'=>'image', 'class'=> 'form-control']])
+            ->getForm();
+
+        $form->handleRequest($request);
+        if($form->isSubmitted()  && $form->isValid()) {
+            $pub->setPostedAt(new \DateTime());
+            $pub->setClub($club);
+            $manager->persist($pub);
+            $manager->flush();
+            return $this->redirectToRoute('home');
+        }
+        return $this->render('clubs/post.html.twig', ['formPost'=> $form->createView()]);
     }
     #[Route('/events', name: 'events')]
     public function events(): Response {
