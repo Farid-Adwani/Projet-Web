@@ -37,6 +37,7 @@
                         <li><a class="nav-link {% if app.request.attributes.get('_route') == "home"  %}active{% endif %}" href={{ path('home')}}>Home </a></li>
                         <li><a class="nav-link {% if app.request.attributes.get('_route') == "clubs"  %}active{% endif %}" href={{ path('clubs')}}>Clubs</a></li>
                         <li><a class="nav-link {% if app.request.attributes.get('_route') == "products"  %}active{% endif %}" href={{ path('products')}}>Products</a></li>
+                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "events"  %}active{% endif %}" href={{ path('events')}}>Events</a></li>
 
 
 
@@ -47,16 +48,22 @@
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "account"  %}active{% endif %}" href={{ path('account')}}>Account</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "logout"  %}active{% endif %}"  href={{ path('logout')}}>Logout</a></li>
 
+                        {% elseif is_granted('ROLE_CLUB') %}
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "add-event"  %}active{% endif %}" href={{ path('add-event')}}>Add event</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "add-product"  %}active{% endif %}" href={{ path('add-product')}}>Add product</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "clubinfo"  %}active{% endif %}" href={{ path('clubinfo')}}>Club Info</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "account"  %}active{% endif %}" href={{ path('account')}}>Account</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "logout"  %}active{% endif %}"  href={{ path('logout')}}>Logout</a></li>
                         {% else %}
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "signup"   %}active{% endif %}"  href={{ path('signup')}}>Sign Up</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "login"  %}active{% endif %}"  href={{ path('login')}}>Login</a></li>
                             <li><a class="nav-link {% if  app.request.attributes.get('_route') == "contact"  %}active{% endif %}"  href={{ path('contact')}}>Contact</a></li>
-
+                            <li>{% block game %} {% endblock %}</li>
                         {% endif %}
 
 
 
-                        <li>{% block game %} {% endblock %}</li>
+
 
                     {% endblock %}
                 </ul>

@@ -93,8 +93,8 @@ class ClubsController extends AbstractController
 
     #[Route('/account', name: 'account')]
     public function account(): Response {
-        $random=random_int(1,20);
-    $user=$this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=>$random]);
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
         $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
         $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
 
@@ -125,10 +125,49 @@ class ClubsController extends AbstractController
     public function products(): Response {
         return $this->render('clubs/products.html.twig', []);
     }
+    #[Route('/clubinfo', name: 'clubinfo')]
+    public function clubinfo(EntityManagerInterface $manager, Request $request): Response {
+        $this->denyAccessUnlessGranted('ROLE_CLUB');
+        $user=$this->getUser();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$user->getClubname()]);
+        $form=$this->createFormBuilder($club)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
+            ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
+            ->add('Img2', TextType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
+            ->add('slogan', TextType::class, ['attr' => ['placeholder'=>'slogan', 'class'=> 'form-control']])
+            ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
+            ->add('phone', TextType::class, ['attr' => ['placeholder'=>'phone', 'class'=> 'form-control']])
+            ->add('city', TextType::class, ['attr' => ['placeholder'=>'city', 'class'=> 'form-control']])
+            ->add('hours', TextType::class, ['attr' => ['placeholder'=>'hours', 'class'=> 'form-control']])
+            ->add('fees', TextType::class, ['attr' => ['placeholder'=>'fees', 'class'=> 'form-control']])
+            ->add('otherInformation', TextType::class, ['attr' => ['placeholder'=>'other information', 'class'=> 'form-control']])
+            ->add('adress', TextType::class, ['attr' => ['placeholder'=>'adress', 'class'=> 'form-control']])
+            ->add('email', TextType::class, ['attr' => ['placeholder'=>'email', 'class'=> 'form-control']])
+            ->add('birthday', TextType::class, ['attr' => ['placeholder'=>'birthday', 'class'=> 'form-control']])
+            ->add('vid1', TextType::class, ['attr' => ['placeholder'=>'vid1', 'class'=> 'form-control']])
+            ->add('vid2', TextType::class, ['attr' => ['placeholder'=>'vid2', 'class'=> 'form-control']])
+            ->add('email', TextType::class, ['attr' => ['placeholder'=>'email', 'class'=> 'form-control']])
+            ->add('facebook', TextType::class, ['attr' => ['placeholder'=>'facebook', 'class'=> 'form-control']])
+            ->add('twitter', TextType::class, ['attr' => ['placeholder'=>'twitter', 'class'=> 'form-control']])
+            ->add('instagram', TextType::class, ['attr' => ['placeholder'=>'instagram', 'class'=> 'form-control']])
+            ->add('linkedin', TextType::class, ['attr' => ['placeholder'=>'linkedin', 'class'=> 'form-control']])
+            ->add('youtube', TextType::class, ['attr' => ['placeholder'=>'youtube', 'class'=> 'form-control']])
+            ->add('domain', TextType::class, ['attr' => ['placeholder'=>'domain', 'class'=> 'form-control']])
+            ->add('color', TextType::class, ['attr' => ['placeholder'=>'color', 'class'=> 'form-control']])
+            ->getForm();
+            $form->handleRequest($request);
+            if($form->isSubmitted()  && $form->isValid()) {
+                $manager->persist($club);
+                $manager->flush();
+                return $this->redirectToRoute('clubs');
+            }
+        return $this->render('clubs/clubinfo.html.twig', ['formClub' => $form->createView()]);
+    }
+
 
 
     #[Route('/addevent', name: 'add-event')]
     public function addevent(Request $request, EntityManagerInterface $manager): Response {
+        $this->denyAccessUnlessGranted('ROLE_CLUB');
         $event=new Event();
         $form=$this->createFormBuilder($event)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
             ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
@@ -149,6 +188,7 @@ class ClubsController extends AbstractController
 
     #[Route('/addproduct', name: 'add-product')]
     public function addproduct(Request $request, EntityManagerInterface $manager): Response {
+        $this->denyAccessUnlessGranted('ROLE_CLUB');
         $product=new Product();
         $form=$this->createFormBuilder($product)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
             ->add('img1', FileType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
