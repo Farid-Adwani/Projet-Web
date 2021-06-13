@@ -129,11 +129,9 @@
                                         }
                                     </style>
                                     <div class="vertical-menu">
-                                        <a href="#">Link 1 </a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                        <a href="#">Link 4</a>
-                                        <a href="#">Link 5</a>
+                                        {% for club in clubs %}
+                                            <a href="#">{{ club.name}} </a>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -143,11 +141,9 @@
                                 <div class="card-body">
                                     <h6 class="d-flex align-items-center mb-3"><i  style="color:#eb345b">upcoming events</i></h6>
                                     <div class="vertical-menu">
-                                        <a href="#">event 1 </a>
-                                        <a href="#">event 2</a>
-                                        <a href="#">event 3</a>
-                                        <a href="#">event 4</a>
-                                        <a href="#">event 5</a>
+                                        {% for event in events %}
+                                        <a href="#">{{ event.name}} </a>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
