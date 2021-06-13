@@ -154,6 +154,11 @@ class compteclub
      */
     private $users;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Publication::class, mappedBy="club")
+     */
+    private $publications;
+
 
 
     public function __construct()
@@ -164,6 +169,7 @@ class compteclub
         $this->events = new ArrayCollection();
         $this->zeze = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->publications = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -607,6 +613,36 @@ class compteclub
     {
         if ($this->users->removeElement($user)) {
             $user->removeClub($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Publication[]
+     */
+    public function getPublications(): Collection
+    {
+        return $this->publications;
+    }
+
+    public function addPublication(Publication $publication): self
+    {
+        if (!$this->publications->contains($publication)) {
+            $this->publications[] = $publication;
+            $publication->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removePublication(Publication $publication): self
+    {
+        if ($this->publications->removeElement($publication)) {
+            // set the owning side to null (unless already changed)
+            if ($publication->getClub() === $this) {
+                $publication->setClub(null);
+            }
         }
 
         return $this;
