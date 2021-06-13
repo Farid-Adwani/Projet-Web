@@ -100,7 +100,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private $roles = '';
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -323,7 +323,8 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return array_unique($this->roles);
+        $rr=json_decode($this->roles);
+        return array_unique($rr);
     }
 
     public function getSalt()
@@ -333,7 +334,7 @@ class User implements UserInterface
 
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this->email;
     }
 
     public function eraseCredentials()
@@ -341,7 +342,7 @@ class User implements UserInterface
         // TODO: Implement eraseCredentials() method.
     }
 
-    public function setRoles(array $roles): self
+    public function setRoles($roles): self
     {
         $this->roles = $roles;
 
