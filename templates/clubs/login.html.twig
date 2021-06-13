@@ -5,12 +5,9 @@
 
     <div class="contact" style="padding-top: 100px">
         <div class="container">
-
             <div class="section-title">
                 <h2>Login</h2>
             </div>
-
-
             <form action="forms/login.php" method="post" role="form" class="php-email-form mt-4">
                 <div class="form-group mt-3">
                     <input type="email" class="form-control" name="email" id="subject" placeholder="email" required>
@@ -23,5 +20,111 @@
 
         </div>
     </div><!-- End Contact Section -->
+<div class="container">
+    <style>*{margin: 0;padding: 0;}
+        body{
+            background:#fff4e6;
+        }
+        .wrapper{
+            width: 600px;
+            height: 500px;
+            background:url('https://d13yacurqjgara.cloudfront.net/users/60166/screenshots/1356130/_.jpg') no-repeat top right;
+            background-size:700px;
+            margin : auto;
+            left:0;
+            right:0;
+            transition:all 1s;
+            position: relative;
+        }
+        svg{
+            position: absolute;
+            left: 0;top: 0;
+            margin:auto;
 
+        }
+        path{
+            transition:all .5s;
+            stroke:#eb345b;
+            animation:scaleMe 5s linear infinite;
+        }
+        .scaleMe{
+            stroke:crimson;
+            stroke-width:3;
+            transform:scale(1.2);
+        }
+        .small{
+            width: 700px;
+        }</style>
+    <script>
+        paths = document.querySelectorAll('path');
+        document.querySelector('button').addEventListener('click',function(){
+
+            document.querySelector('.wrapper').classList.toggle('small');
+
+            Array.prototype.forEach.call(paths,function(item,index){
+
+                item.classList.remove('scaleMe')
+
+            })
+
+        })
+        Array.prototype.forEach.call(paths,function(item,index){
+
+            item.addEventListener('mouseenter',function(){
+
+                var _this = this;
+
+                this.classList.toggle('scaleMe')
+
+                this.addEventListener('transitionend',function(){
+
+                    _this.classList.toggle('scaleMe')
+
+                })
+
+            })
+        })
+    </script>
+    <div class="wrapper">
+        <svg id='sv' width="700px" height="700px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 410,282 A 73,73 0 1,1 358,255 A 117,117 0 1,0 251,195 L 438,495" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 407,265 A 83,83 0 1,1 359,246 A 107,107 0 1,0 261,195 L 454,500" fill="none"  stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 418,262 A 93,93 0 1,1 357,237 A 98,98 0 1,0 273,195 L 450,475" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 441,275 A 103,103 0 1,1 355,227 A 88,88 0 1,0 286,195 L 474,495" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 460,290 A 113,113 0 1,1 360,216 A 78,78 0 1,0 285,175 L 480,485" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 467,282 A 123,123 0 1,1 358,207 A 67,67 0 1,0 297,175 L 497,495" fill="none" stroke-width='3'stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 485,310 A 133,133 0 1,1 345,197 A 57,57 0 1,0 302,165 L 490,465" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+            <path d="M 492,298 A 143,143 0 1,1 347,188 A 48,48 0 1,0 309,156 L 503,470" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+
+            <path d="M 506,318 A 153,153 0 1,1 349,178 A 38,38 0 1,0 317,153 L 526,485" fill="none" stroke-width='3' stroke-dasharray=5>
+                <animate attributeName="stroke-dashoffset" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+                <animate attributeName="stroke-dasharray" begin="0s" from="100%" to="0%" dur="5s" fill="freeze" />
+            </path>
+        </svg>
+    </div>
+</div>
 {% endblock %}

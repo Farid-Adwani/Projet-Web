@@ -97,7 +97,7 @@ class ClubsController extends AbstractController
     #[Route('/account', name: 'account')]
     public function account(): Response {
         $random=random_int(1,20);
-    $user=$this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=>$random]);
+        $user=$this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=>$random]);
         $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
         $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
 
