@@ -44,12 +44,12 @@ class User implements UserInterface
     private $address;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, options={"default": "www.twitter.com"})
      */
     private $twitter;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, options={"default": "www.twitter.com"})
      */
     private $instagram;
 

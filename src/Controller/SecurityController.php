@@ -44,6 +44,11 @@ class SecurityController extends AbstractController
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
             $user->setRoles(json_encode(['ROLE_USER']));
+            $user->setTwitter("www.twitter.com");
+            $user->setInstagram("www.instagram.com");
+            $user->setFacebook("www.facebook.com");
+            $user->setPassword($hash);
+
             $manager->persist($user);
             $manager->flush();
             return $this->redirectToRoute('login');
