@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block title %}Club Info{% endblock %}
+{% block body %}
+
+    <div class="contact" style="padding-top: 100px">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Update club info</h2>
+            </div>
+            <div class="php-email-form mt-4">
+                {{ form_start(formClub) }}
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.name) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.img1) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.Img2)  }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.slogan) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.vid1) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.vid2) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.birthday) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.email) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.facebook) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.instagram) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.linkedin) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.twitter) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.domain) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.color) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.description) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.phone) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.city) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.hours) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.fees) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.otherInformation) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.youtube) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formClub.adress) }}
+                </div>
+
+                <div class="text-center" style="margin-top: 30px;"><button type="submit">Submit</button></div>
+                {{ form_end(formClub) }}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
