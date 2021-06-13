@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 12 juin 2021 à 23:55
+-- Généré le : dim. 13 juin 2021 à 12:11
 -- Version du serveur :  10.4.18-MariaDB
 -- Version de PHP : 8.0.3
 
@@ -115,26 +115,16 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `name`, `img1`, `img2`, `description`, `filter`, `club_id`) VALUES
-(961, 'Raheem Ritchie', '/assets/img/img1.jpg', '/assets/img/img3.jpg', 'Bosco, Stokes and Collins', 'training', NULL),
-(962, 'Prof. Jeanne Wehner V', '/assets/img/img3.jpg', '/assets/img/img1.jpg', 'Bernier and Sons', 'training', NULL),
-(963, 'Aiyana Grimes', '/assets/img/img3.jpg', '/assets/img/img2.jpg', 'Mante LLC', 'training', NULL),
-(964, 'Annie Cartwright', '/assets/img/img3.jpg', '/assets/img/img3.jpg', 'Reichel, Huels and Stanton', 'training', NULL),
-(965, 'Saul Roob', '/assets/img/img3.jpg', '/assets/img/img2.jpg', 'Shields PLC', 'training', NULL),
-(966, 'Cleta Hayes', '/assets/img/img1.jpg', '/assets/img/img1.jpg', 'Bogan and Sons', 'training', NULL),
-(967, 'Augustus Pfeffer', '/assets/img/img2.jpg', '/assets/img/img2.jpg', 'Abernathy-Buckridge', 'training', NULL),
-(968, 'Mr. Bernhard Spinka', '/assets/img/img3.jpg', '/assets/img/img2.jpg', 'Wyman, Donnelly and Hettinger', 'training', NULL),
-(969, 'Carroll McLaughlin', '/assets/img/img2.jpg', '/assets/img/img3.jpg', 'Reichert, Bechtelar and Anderson', 'training', NULL),
-(970, 'Arnaldo O\'Reilly', '/assets/img/img2.jpg', '/assets/img/img2.jpg', 'Ratke, Kunde and Thompson', 'training', NULL),
-(971, 'Cordia Hamill', '/assets/img/img1.jpg', '/assets/img/img2.jpg', 'Bosco, Rohan and Schimmel', 'training', NULL),
-(972, 'Jordyn Ryan', '/assets/img/img2.jpg', '/assets/img/img2.jpg', 'Stracke LLC', 'training', NULL),
-(973, 'Prof. Rosamond Herman', '/assets/img/img3.jpg', '/assets/img/img1.jpg', 'Turner PLC', 'training', NULL),
-(974, 'Karianne Rau I', '/assets/img/img2.jpg', '/assets/img/img1.jpg', 'Kihn, Stiedemann and Crona', 'training', NULL),
 (975, 'Susan Schroeder', '/assets/img/img2.jpg', '/assets/img/img2.jpg', 'Wolff, Kub and Lueilwitz', 'training', NULL),
 (976, 'Doris Nitzsche PhD', '/assets/img/img1.jpg', '/assets/img/img3.jpg', 'Schroeder Inc', 'training', NULL),
 (977, 'Ignacio Lueilwitz', '/assets/img/img3.jpg', '/assets/img/img2.jpg', 'Lemke-Mueller', 'training', NULL),
 (978, 'Prof. Deshawn Marvin', '/assets/img/img3.jpg', '/assets/img/img1.jpg', 'Stehr-Shields', 'training', NULL),
 (979, 'Mr. Macey Hayes', '/assets/img/img1.jpg', '/assets/img/img3.jpg', 'Grady Ltd', 'training', NULL),
-(980, 'Loyce Kuhn Jr.', '/assets/img/img3.jpg', '/assets/img/img2.jpg', 'Ferry-Daugherty', 'training', NULL);
+(980, 'Loyce Kuhn Jr.', '/assets/img/img3.jpg', '/assets/img/img2.jpg', 'Ferry-Daugherty', 'training', NULL),
+(981, 'Securiday 2k21 : 14th Edition', '/assets/img/Clubs/securinets/events/securiday.jpg', '/assets/img/Clubs/securinets/events/securiday2.jpg', 'SecuriDay is all about introducing youth to security, and its importance in their everyday lives.', 'Competition', NULL),
+(982, 'HACKLOCK', '/assets/img/Clubs/securinets/events/hacklock.jpg', '/assets/img/Clubs/securinets/events/hacklock2.jpg', 'Securinets Insat is immensely pleased to introduce you to our very first edition of Hacklock\r\nMark up your calendars on the 20th and 21st of February and wait for us for further information ', 'Competition', NULL),
+(983, 'Securinets FriendlyCTF', '/assets/img/Clubs/securinets/events/friendly.jpg', '/assets/img/Clubs/securinets/events/friendly2.png', 'This is an opportunity for beginners to get introduced to what a CTF is, and get the chance to participate in it as it doesn\'t require any prerequisite knowledge.', 'training', NULL),
+(984, 'CyberCamp\r\n', '/assets/img/Clubs/securinets/events/cybercamp.jpg\r\n', '/assets/img/Clubs/securinets/events/cybercamp2.jpg', ' CyberCamp is your way into the cybersecurity world and not only through theoretical lessons but also practical challenges! \r\nThe Bootcamp will be composed of three workshops :\r\n- Introduction to offensive security: we\'ll take you on a tour to the ethical', 'Competition', NULL);
 
 -- --------------------------------------------------------
 
@@ -249,7 +239,16 @@ INSERT INTO `user` (`id`, `fullname`, `email`, `phone`, `address`, `twitter`, `i
 (8, 'AWNI MEJRI', ' ', 22222222, ' adressaaaa', ' ', ' ', ' ', 'gl/rt..', ' An ambitious and systematic\r\n                            industrial automation engineer\r\n                            who has a great passion for\r\n                            learning and discovering.\r\n                            He loves working on robot', 'Material Manager', '/assets/img/Clubs/Aerobotix/board/mater.png'),
 (9, 'AZIZ BEN GANDIA', ' ', 22222222, ' adressaaaa', ' ', ' ', ' ', 'gl/rt..', 'A second year chemersty student\r\n                            who is so passionate about\r\n                            robotics. He has a good yet\r\n                            strange way of communicating.\r\n                            He is great at convinc', 'Sponsoring', '/assets/img/Clubs/Aerobotix/board/sponso.png'),
 (10, 'MOHAMED LOUKIL', ' ', 22222222, ' adressaaaa', ' ', ' ', ' ', 'gl/rt..', 'A driven, aspiring engineer\r\n                            who has been tracking\r\n                            planes with a laptop\'s\r\n                        radar from his house\'s\r\n                            roof since his childhood.\r\n                    ', 'Aeromodelisme Manager', '/assets/img/Clubs/Aerobotix/board/aeromod.png'),
-(11, 'MAROUENE KAANICHE', ' ', 22222222, ' adressaaaa', ' ', ' ', ' ', 'gl/rt..', 'A persevering and commited\r\n                            engineer. He\'s full of spirit\r\n                and energy and will always\r\n                preform at his best.\r\n                He he seeks to help our newcomers\r\n                land their first st', 'Training Manager', '/assets/img/Clubs/Aerobotix/board/formation.png');
+(11, 'MAROUENE KAANICHE', ' ', 22222222, ' adressaaaa', ' ', ' ', ' ', 'gl/rt..', 'A persevering and commited\r\n                            engineer. He\'s full of spirit\r\n                and energy and will always\r\n                preform at his best.\r\n                He he seeks to help our newcomers\r\n                land their first st', 'Training Manager', '/assets/img/Clubs/Aerobotix/board/formation.png'),
+(12, 'Tounsi Chaima', 'chaimatounsi@insat.u-carthage.tn', 22222222, 'Tunis', 'https://twitter.com/tounsi_chaima?lang=en', 'www.instagram.com', 'https://www.facebook.com/tounssi.chaima', 'RT4', 'the enthusiastic leader always coming up with new ideas. She motivates and influences the board to acheive the best results at all costs.', 'President', '/assets/img/Clubs/securinets/president.jpg'),
+(13, 'Mohamed Ali Khedher', 'mohamedalikhedher@insat.u-cartage.tn', 22222222, 'Sousse', 'www.twitter.com', 'https://www.instagram.com/medalikhedher/', 'https://www.facebook.com/mohamedali.khedher.7/about_overview', 'RT4', 'our vice president is the most calm, positive and charismatic member of the team. He takes on leadership or chairperson roles by clarifying objectives, responsibilities and duties within the group .\r\n\r\n', 'Vice President', '/assets/img/Clubs/securinets/vicepresident.jpg'),
+(14, 'tarek baccar', 'tarekbaccar@insat.u-carthage.tn', 22222222, 'La Mannouba', 'https://twitter.com/tarekbaccar1', 'https://www.instagram.com/tarekbaccar/', 'https://www.facebook.com/tarek.baccar.447851', 'RT3', 'Our treasurer , the richest member , is responsible of all the spendings and revenues of our club. He is also in the constant research of the best deals .\r\n\r\n', 'Tresorier', '/assets/img/Clubs/securinets/tresorier.jpg'),
+(15, 'Hama Ben Ismail', 'hamabenismail@insat.u-carthage.tn', 22222222, 'Sousse', 'www.twitter.com', 'https://www.instagram.com/hamabenismail/', 'https://www.facebook.com/Hamaaaab', 'RT3', 'The webmaster is the mind behind this masterpiece of a website as well as our video conferencing platform.\r\n\r\n', 'Web Master', '/assets/img/Clubs/secuirnets/webmaster.jpg'),
+(16, 'Bacem Zarai', 'bacemzarai@insat.u-carthage.tn', 22222222, 'Tunis', 'https://twitter.com/bacemzarai?lang=en', 'https://www.instagram.com/bacem_zarai/', 'https://www.facebook.com/bacem1.zarai', 'RT4', 'In a technology-oriented world , our junior manager works with the younger generations to implement in them the basics of cybersecurity , a must for the 21st century.\r\n\r\n', 'Junior\'s Manager', '/assets/img/Clubs/securinets/responsablejunior.jpg'),
+(17, 'MOHAMED ARFAOUI', 'mohamedarfaoui@insat.u-carthage.tn', 22222222, 'Tunis', 'https://twitter.com/hama_arfaoui?lang=en', 'https://www.instagram.com/h4ma.ar/', 'https://www.facebook.com/arfaoui.mohamed.7/about_contact_and_basic_info', 'RT4', 'Our talented media manager. he makes it easier to reach a greater community , keeping everyone updated about the latest discoveries in cybersecurity.\r\n\r\n', 'Media Manager', '/assets/img/Clubs/secuirnets/mediamanager.jpg'),
+(18, 'CHERIF AICHA', 'cherifaicha@insat.u-carthage.tn', 22222222, 'Tunis', 'www.twitter.com', 'https://www.instagram.com/a._cherif/', 'https://www.facebook.com/aicha.cherif.7549/about_life_events', 'RT4', 'Our Head of External Relations works on the image of our club outside the university. She contacts other clubs for collaborations , helps in the creation of other securinets entities and is also a great sponsorship manager.', 'External Relations Manager', '/assets/img/Clubs/securinets/externalrelationsmanager.jpg'),
+(19, 'SEMAH BEN ALI', 'semahbenali@insat.u-carthage.tn', 22222222, 'Gabes', 'https://twitter.com/benalisemah', 'www.instagram.com', 'https://www.facebook.com/SemahBA98', 'RT3', 'The technical team manager- the life saver of our members- is here to help them take their first steps in cybersecurity by organizing multiple workshops , competitions and simply assisting them with their technical issues.\r\n\r\n', 'Techincal Team Manager', '/assets/img/Clubs/technicalmanager.jpg'),
+(20, 'Asma Jebari', 'asmajebari@insat.u-carthage.tn', 22222222, 'Ariana', 'www.twitter.com', 'www.instagram.com', 'https://www.facebook.com/asma.jebari4', 'RT3', 'Our Human resources manager also the unofficial pyschologist , event planner and peaceamaker.\r\n\r\n', 'Human Ressources Manager', '/assets/img/Clubs/securinets/humanressourcemanager.jpg');
 
 -- --------------------------------------------------------
 
@@ -353,7 +352,7 @@ ALTER TABLE `compteclub`
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=981;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=986;
 
 --
 -- AUTO_INCREMENT pour la table `field`
@@ -377,7 +376,7 @@ ALTER TABLE `statistique`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Contraintes pour les tables déchargées
