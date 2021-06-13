@@ -25,9 +25,6 @@ use Symfony\Component\HttpFoundation\Request;
 class ClubsController extends AbstractController
 {
 
-
-
-
     #[Route('/', name: 'landing')]
     public function index(): Response
     {
@@ -116,14 +113,6 @@ class ClubsController extends AbstractController
         return $this->render('clubs/contact.html.twig', []);
     }
 
-    #[Route('/login', name: 'login')]
-    public function login(): Response {
-        return $this->render('clubs/login.html.twig', []);
-    }
-    #[Route('/signup', name: 'signup')]
-    public function signup(): Response {
-        return $this->render('clubs/signup.html.twig', []);
-    }
     #[Route('/clubs', name: 'clubs')]
     public function clubs(): Response {
         return $this->render('clubs/clubs.html.twig', []);
@@ -178,11 +167,6 @@ class ClubsController extends AbstractController
         return $this->render('clubs/addProduct.html.twig', ['formProduct' => $form->createView()]);
     }
 
-    #[Route('/loaddata', name: 'loaddata')]
-    public function loaddata(): Response
-    {
-
-    }
 
 
 }

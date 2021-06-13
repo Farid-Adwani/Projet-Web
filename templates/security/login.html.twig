@@ -11,12 +11,12 @@
             </div>
 
 
-            <form action="forms/login.php" method="post" role="form" class="php-email-form mt-4">
+            <form action="{{ path('login') }}" method="post" role="form" class="php-email-form mt-4">
                 <div class="form-group mt-3">
-                    <input type="email" class="form-control" name="email" id="subject" placeholder="email" required>
+                    <input type="email" class="form-control" name="_username" id="subject" placeholder="email" required>
                 </div>
                 <div class="form-group mt-3">
-                    <input type="password" class="form-control" name="password" rows="5" placeholder="password" required></input>
+                    <input type="password" class="form-control" name="_password" rows="5" placeholder="password" required></input>
                 </div>
                 <div class="text-center" style="margin-top: 30px;"><button type="submit">Sign in</button></div>
             </form>

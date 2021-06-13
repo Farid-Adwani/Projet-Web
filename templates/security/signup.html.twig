@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Sign Up{% endblock %}
+{% block body %}
+
+
+    <div class="contact" style="padding-top: 100px">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Sign Up</h2>
+            </div>
+
+
+            <div class="php-email-form mt-4">
+                {{ form_start(formUser) }}
+                <div class="form-group mt-3">
+                    {{ form_widget(formUser.fullname) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formUser.email) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formUser.password) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formUser.confirmPassword) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formUser.phone) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_widget(formUser.address) }}
+                </div>
+
+                <div class="text-center" style="margin-top: 30px;"><button type="submit">Sign up</button></div>
+                {{ form_rest(formUser) }}
+                {{ form_end(formUser) }}
+            </div>
+
+        </div>
+    </div><!-- End Contact Section -->
+
+{% endblock %}
