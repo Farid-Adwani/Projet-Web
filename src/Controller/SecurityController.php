@@ -47,7 +47,6 @@ class SecurityController extends AbstractController
             $user->setTwitter("www.twitter.com");
             $user->setInstagram("www.instagram.com");
             $user->setFacebook("www.facebook.com");
-            $user->setPassword($hash);
 
             $manager->persist($user);
             $manager->flush();

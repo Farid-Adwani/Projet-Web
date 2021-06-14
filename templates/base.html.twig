@@ -37,26 +37,26 @@
                         <li><a class="nav-link {% if app.request.attributes.get('_route') == "home"  %}active{% endif %}" href={{ path('home')}}>Home </a></li>
                         {% if is_granted('ROLE_USER') %}
                         <li><a class="nav-link {% if app.request.attributes.get('_route') == "clubs"  %}active{% endif %}" href={{ path('clubs')}}>Clubs</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "products"  %}active{% endif %}" href={{ path('products')}}>Products</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "events"  %}active{% endif %}" href={{ path('events')}}>Events</a></li>
                         {% endif %}
-                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "products"  %}active{% endif %}" href={{ path('products')}}>Products</a></li>
-                        <li><a class="nav-link {% if app.request.attributes.get('_route') == "events"  %}active{% endif %}" href={{ path('events')}}>Events</a></li>
-
 
 
                         {% if is_granted('ROLE_USER') %}
                             {#
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "add-event"  %}active{% endif %}" href={{ path('addevent')}}>Addvents</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "add-product"  %}active{% endif %}" href={{ path('addproduct')}}>Products</a></li> #}
-                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "newsfeed"  %}active{% endif %}" href={{ path('newsfeed')}}>Newsfeed</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "newsfeed"  %}active{% endif %}" href={{ path('newsfeed')}}>News feed</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "account"  %}active{% endif %}" href={{ path('account')}}>Account</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "logout"  %}active{% endif %}"  href={{ path('logout')}}>Logout</a></li>
 
                         {% elseif is_granted('ROLE_CLUB') %}
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "myclub"  %}active{% endif %}" href={{ path('myclub')}}>My club</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "post"  %}active{% endif %}" href={{ path('post')}}>Post</a></li>
-
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "add-event"  %}active{% endif %}" href={{ path('add-event')}}>Add event</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "add-product"  %}active{% endif %}" href={{ path('add-product')}}>Add product</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "clubinfo"  %}active{% endif %}" href={{ path('clubinfo')}}>Club Info</a></li>
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "members"  %}active{% endif %}" href={{ path('members')}}>Members</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "account"  %}active{% endif %}" href={{ path('account')}}>Account</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "logout"  %}active{% endif %}"  href={{ path('logout')}}>Logout</a></li>
                         {% else %}

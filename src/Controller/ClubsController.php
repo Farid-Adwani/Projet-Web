@@ -186,6 +186,12 @@ class ClubsController extends AbstractController
         ]);
     }
 
+
+    #[Route('/myclub', name: 'myclub')]
+    public function myclub() {
+        $user = $this->getUser();
+        return $this->redirectToRoute('club', ['clubname' => $user->getClubname()]);
+    }
     #[Route('/products', name: 'products')]
     public function products(ProductRepository $repo): Response {
         $products=$repo->findAll();
@@ -193,6 +199,11 @@ class ClubsController extends AbstractController
             'products' => $products
 
         ]);
+    }
+    #[Route('/members', name: 'members')]
+    public function members(ProductRepository $repo): Response {
+        $this->denyAccessUnlessGranted('ROLE_CLUB');
+        return $this->render('clubs/members.html.twig', []);
     }
 
     #[Route('/clubinfo', name: 'clubinfo')]
