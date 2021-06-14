@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class ClubsController extends AbstractController
 {
@@ -112,6 +112,34 @@ class ClubsController extends AbstractController
 
 
         ]);
+    }
+    #[Route('update_account', name: 'update_account')]
+    public function update_account(EntityManagerInterface $manager): Response {
+        $user = $this->getUser();
+        $user->setFullname($_POST['fullname']);
+        $user->setPhone($_POST['phone']);
+        $user->setAddress($_POST['address']);
+        $user->setTwitter($_POST['twitter']);
+        $user->setFacebook($_POST['facebook']);
+        $user->setClass($_POST['class']);
+        if (isset($_FILES['file'])&&$_FILES['file']) {
+            $newname=uniqid().$_FILES['file']['name'];
+            $path='assets/img/'.$newname;
+            move_uploaded_file($_FILES['file']['tmp_name'],$path);
+            $user->setImage($path);
+        }
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('account');
+    }
+    #[Route('update_logins', name: 'update_logins')]
+    public function update_login(EntityManagerInterface $manager,UserPasswordEncoderInterface $encoder): Response{
+        $user=$this->getUser();
+        $user->setEmail($_POST['email']);
+        $user->setPassword($encoder->encodePassword($user, $_POST['password']));
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('account');
     }
 
     #[Route('/contact', name: 'contact')]
