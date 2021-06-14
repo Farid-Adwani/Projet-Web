@@ -31,6 +31,9 @@ class ClubsController extends AbstractController
     #[Route('/', name: 'landing')]
     public function index(): Response
     {
+        if($this->isGranted('ROLE_ADMIN')) {
+            return  $this->redirectToRoute('admin');
+        }
         $products=$this->getDoctrine()->getRepository(Product::class)->findAll();
         $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
         $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
@@ -74,17 +77,40 @@ class ClubsController extends AbstractController
         $club = $this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name' => $clubname]);
         $statistiques = $this->getDoctrine()->getRepository(Statistique::class)->findAll();
         $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
-        $events = $this->getDoctrine()->getRepository(Event::class)->findBy(["club"=>$club]);
-        $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
-        $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
+        $events = $club->getEvents();
+        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
 
+        $user=$this->getUser();
+        $eventsnames = [];
+        $state='unfollowed';
+        if($user!=null) {
+            $clubs = $user->getClubs();
+            foreach ($clubs as $cc) {
+                if ($cc->getName() == $club->getName()) {
+                    $state = 'followed';
+                    break;
+                }
+            }
+
+            $eventsuser = $user->getEvents();
+
+            foreach ($eventsuser as $ev) {
+                array_push($eventsnames, $ev->getName());
+            }
+        }
+
+        $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
+      //  $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
             'statistiques'=>$statistiques,
             'fields'=>$fields,
             'events'=>$events,
-            'products'=>$products
+            'products'=>$products,
+            'state'=>$state,
+            'eventsnames'=>$eventsnames
 
         ]);
     }
@@ -116,6 +142,7 @@ class ClubsController extends AbstractController
     }
     #[Route('update_account', name: 'update_account')]
     public function update_account(EntityManagerInterface $manager): Response {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
         $user->setFullname($_POST['fullname']);
         $user->setPhone($_POST['phone']);
@@ -135,6 +162,7 @@ class ClubsController extends AbstractController
     }
     #[Route('update_logins', name: 'update_logins')]
     public function update_login(EntityManagerInterface $manager,UserPasswordEncoderInterface $encoder): Response{
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user=$this->getUser();
         $user->setPassword($encoder->encodePassword($user, $_POST['password']));
         $manager->persist($user);
@@ -162,6 +190,7 @@ class ClubsController extends AbstractController
  
     #[Route('/publications', name: 'newsfeed')]
     public function publications(compteclubRepository $repo): Response {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $feeds=[];
         $user= new User();
         $user=$this->getUser();
@@ -307,8 +336,8 @@ class ClubsController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_CLUB');
         $product=new Product();
         $form=$this->createFormBuilder($product)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
-            ->add('img1', FileType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
-            ->add('img2', FileType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
+            ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
+            ->add('img2', TextType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
             ->add('prix', TextType::class, ['attr' => ['placeholder'=>'prix', 'class'=> 'form-control']])
             ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
             ->getForm();
@@ -322,7 +351,47 @@ class ClubsController extends AbstractController
         }
         return $this->render('clubs/addProduct.html.twig', ['formProduct' => $form->createView()]);
     }
+#[Route('/followings/{clubname}', name: 'followings')]
+public function followings($clubname, EntityManagerInterface $manager){
+    $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+$user=$this->getUser();
+$club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$clubname]);
+$user->addClub($club);
+$manager->persist($user);
+$manager->flush();
+return $this->redirectToRoute('club',['clubname'=>$clubname]);
+    }
+    #[Route('/unfollowings/{clubname}', name: 'unfollowings')]
+    public function unfollowings($clubname, EntityManagerInterface $manager){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user=$this->getUser();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$clubname]);
+        $user->removeClub($club);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('club',['clubname'=>$clubname]);
+    }
 
 
+    #[Route('/followingsevent/{eventname}', name: 'followingsevent')]
+    public function followingsevent($eventname, EntityManagerInterface $manager){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user=$this->getUser();
+        $event=$this->getDoctrine()->getRepository(Event::class)->findOneBy(['name'=>$eventname]);
+        $user->addEvent($event);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('club',['clubname'=>$event->getClub()->getName()]);
+    }
+    #[Route('/unfollowingsevent/{eventname}', name: 'unfollowingsevent')]
+    public function unfollowingsevent($eventname, EntityManagerInterface $manager){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user=$this->getUser();
+        $event=$this->getDoctrine()->getRepository(Event::class)->findOneBy(['name'=>$eventname]);
+        $user->removeEvent($event);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('club',['clubname'=>$event->getClub()->getName()]);
+    }
 
 }

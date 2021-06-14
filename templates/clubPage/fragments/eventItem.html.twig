@@ -11,6 +11,11 @@
                     <div class="portfolio-links">
                         <a href={{ valeur.img2}} data-gallery="portfolioGallery" class="portfolio-lightbox"
                            title={{ valeur.name}}><i class="bx bx-plus"></i></a>
+                        {% if (valeur.name in eventsnames) %}
+                            <a href="{{ path('unfollowingsevent',{'eventname':valeur.name}) }}"><button id="follow-button">Following</button></a>
+                        {% else %}
+                            <a href="{{ path('followingsevent',{'eventname':valeur.name}) }}"><button id="follow-button">+ Follow</button></a>
+                        {% endif %}
 
                     </div>
                 </div>

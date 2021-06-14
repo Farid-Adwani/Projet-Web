@@ -37,10 +37,9 @@
                     <iframe width="500" height="250"  title="YouTube video player"   frameborder="0" src={{ club.getVid1()}}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                    <iframe width="500" height="250"  title="YouTube video player" src={{ club.getVid2()}}
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                    <iframe width="500" height="250"  title="YouTube video player"   frameborder="0" src={{ club.vid2}}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -61,7 +60,63 @@
     </script>
     <!--End of Tawk.to Script-->
 {% endblock %}
+{% block css %}
+    {{ parent() }}
+    <style>
+        #follow-button {
+            color: #eb345b;
+            font-family: "Helvetica";
+            font-size: 10pt;
+            border: 1px solid;
+            border-color: #eb345b;
+            border-radius: 3px;
+            width: 85px;
+            height: 30px;
+            top: 50px;
+            left: 50px;
+            cursor: hand;
+        }
+    </style>
+{% endblock %}
+{%block JS  %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js  "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("#follow-button").click(function(){
+                if ($("#follow-button").text() == "+ Follow"){
+                    // *** State Change: To Following ***
+                    // We want the button to squish (or shrink) by 10px as a reaction to the click and for it to last 100ms
+                    $("#follow-button").animate({ width: '-=10px' }, 100, 'easeInCubic', function () {});
 
+                    // then now we want the button to expand out to it's full state
+                    // The left translation is to keep the button centred with it's longer width
+                    $("#follow-button").animate({ width: '+=45px', left: '-=15px' }, 600, 'easeInOutBack', function () {
+                        $("#follow-button").css("color", "#fff");
+                        $("#follow-button").text("Following");
+
+                        // Animate the background transition from white to green. Using JQuery Color
+                        $("#follow-button").animate({
+                            backgroundColor: "#eb345b",
+                            borderColor: "#eb345b"
+                        }, 1000 );
+                    });
+                }else{
+
+                    // *** State Change: Unfollow ***
+                    // Change the button back to it's original state
+                    $("#follow-button").animate({ width: '-=25px', left: '+=15px' }, 600, 'easeInOutBack', function () {
+                        $("#follow-button").text("+ Follow");
+                        $("#follow-button").css("color", "#eb345b");
+                        $("#follow-button").css("background-color", "#ffffff");
+                        $("#follow-button").css("border-color", "#eb345b");
+                    });
+                }
+            });
+        });</script>
+{% endblock %}
 {% block body %}
     {{ include('clubPage/fragments/SectionAbout.html.twig',{}) }}
     {{ include('clubPage/fragments/SectionRegistration.html.twig',{}) }}

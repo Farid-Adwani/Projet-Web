@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="/assets/img/Clubs/cineradio/cineradio.jpg" class="card-img-top" alt="...">
+                        <img src={{ feed.image}} class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ feed.title }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ feed.getClub().name }} <br>{{ feed.getPostedAt()|date('Y-m-d H:i:s')}} </h6>
