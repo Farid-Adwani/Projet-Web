@@ -98,6 +98,7 @@ class ClubsController extends AbstractController
     public function account(): Response {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
+     //   dd($user);
         $events=$user->getEvents();
         $clubs=$user->getClubs();
 
