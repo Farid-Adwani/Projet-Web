@@ -123,7 +123,7 @@ class ClubsController extends AbstractController
         $user->setTwitter($_POST['twitter']);
         $user->setFacebook($_POST['facebook']);
         $user->setClass($_POST['class']);
-        if (isset($_FILES['file'])&&$_FILES['file']) {
+       if (isset($_FILES['file'])&&$_FILES['file']['name']) {
             $newname=uniqid().$_FILES['file']['name'];
             $path='assets/img/'.$newname;
             move_uploaded_file($_FILES['file']['tmp_name'],$path);
@@ -136,7 +136,6 @@ class ClubsController extends AbstractController
     #[Route('update_logins', name: 'update_logins')]
     public function update_login(EntityManagerInterface $manager,UserPasswordEncoderInterface $encoder): Response{
         $user=$this->getUser();
-        $user->setEmail($_POST['email']);
         $user->setPassword($encoder->encodePassword($user, $_POST['password']));
         $manager->persist($user);
         $manager->flush();
