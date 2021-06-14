@@ -13,7 +13,7 @@
 <div class="container padding">
     <div class="row padding">
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center">
-            {% for valeur in [{'img':"/assets/img/Team/Nader.jpg",'name':"Nader Ourdiane"},{'img':"/assets/img/Team/Ala.jpg",'name':"Alaeddine Fattouch"},{'img':"/assets/img/Team/Farid.jpg",'name':"Farid Adwani"},{'img':"/assets/img/Team/Salem.jpg",'name':"Salem Hamdani"}] %}
+            {% for valeur in [{'img':"/assets/img/Team/Nader.jpg",'name':"Nader Ourdiane","facebook":"https://www.facebook.com/NaderOue"},{'img':"/assets/img/Team/Ala.jpg",'name':"Alaeddine Fattouch","facebook":"https://www.facebook.com/alaeddine.fattouch.77"},{'img':"/assets/img/Team/Farid.jpg",'name':"Farid Adwani","facebook":"https://www.facebook.com/profile.php?id=100010601919084"},{'img':"/assets/img/Team/Salem.jpg",'name':"Salem Hamdani","facebook":"https://www.facebook.com/salem.hamdani"}] %}
                 <!-- start team member -->
                 <div class="col team-style-01 text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
                     <figure class="border-radius-5px">
@@ -25,7 +25,7 @@
                             <span class="team-title d-block alt-font text-white">{{ valeur['name']}}</span>
                             <span class="team-sub-title text-small d-block text-white text-uppercase">Software Engineering Student</span>
                             <div class="social-icon w-100 position-absolute bottom-30px left-0px">
-                                <a href="https://www.facebook.com/" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href= {{valeur['facebook']}} target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
                                 <a href="https://www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
                                 <a href="https://twitter.com/" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
                             </div>
