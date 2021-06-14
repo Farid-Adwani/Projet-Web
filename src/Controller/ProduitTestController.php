@@ -77,7 +77,6 @@ class ProduitTestController extends AbstractController
         if($maxpage==$pages && ($maxpage-$minpage)<15 ){$minpage=max(1,$maxpage-16);}
         if($minpage==1 && ($maxpage-$minpage)<15){$maxpage=min($pages,$minpage+16);}
         if(($maxpage-$minpage)<16)  {$minpage=1; $maxpage=$pages;}
-
         return $this->render('produit_test/index.html.twig', [
             'products' => $Produits,
             'etat'=>'all affiché',

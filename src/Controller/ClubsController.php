@@ -77,14 +77,23 @@ class ClubsController extends AbstractController
         $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
-
+        $user=$this->getUser();
+        $clubs=$user-> getClubs();
+        $state='unfollowed';
+        foreach ($clubs as $cc){
+            if ($cc->getName()== $club->getName()) {
+                $state='followed';
+                break;
+            }
+        }
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
             'statistiques'=>$statistiques,
             'fields'=>$fields,
             'events'=>$events,
-            'products'=>$products
+            'products'=>$products,
+            'state'=>$state
 
         ]);
     }
@@ -315,7 +324,23 @@ class ClubsController extends AbstractController
         }
         return $this->render('clubs/addProduct.html.twig', ['formProduct' => $form->createView()]);
     }
-
-
+#[Route('/followings/{clubname}', name: 'followings')]
+public function followings($clubname, EntityManagerInterface $manager){
+$user=$this->getUser();
+$club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$clubname]);
+$user->addClub($club);
+$manager->persist($user);
+$manager->flush();
+return $this->redirectToRoute('club',['clubname'=>$clubname]);
+    }
+    #[Route('/unfollowings/{clubname}', name: 'unfollowings')]
+    public function unfollowings($clubname, EntityManagerInterface $manager){
+        $user=$this->getUser();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$clubname]);
+        $user->removeClub($club);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('club',['clubname'=>$clubname]);
+    }
 
 }
