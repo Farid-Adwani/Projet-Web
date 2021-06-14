@@ -114,7 +114,7 @@ class ClubsController extends AbstractController
 
         ]);
     }
-    dsqfgqdgqsgqsgqsg
+// members only for one club
 
     #[Route('/home', name: 'home')]
     public function home(): Response {
