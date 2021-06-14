@@ -204,7 +204,13 @@ class ClubsController extends AbstractController
     #[Route('/members', name: 'members')]
     public function members(ProductRepository $repo): Response {
         $this->denyAccessUnlessGranted('ROLE_CLUB');
-        return $this->render('clubs/members.html.twig', []);
+        $club=$this->getUser()->getClubName();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$club]);
+        $members=$club->getUsers();
+       // dd($members);
+        return $this->render('clubs/members.html.twig', [
+            'members'=>$members
+        ]);
     }
 
     #[Route('/clubinfo', name: 'clubinfo')]

@@ -69,7 +69,7 @@ class User implements UserInterface
     private $description;
 
     /**
-     * @ORM\Column(type="json", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $role;
 
@@ -323,7 +323,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        $rr=json_decode($this->roles);
+        $rr=json_decode($this->roles, true);
         return array_unique($rr);
     }
 
