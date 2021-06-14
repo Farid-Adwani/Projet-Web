@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 14 juin 2021 à 01:44
+-- Généré le : lun. 14 juin 2021 à 12:40
 -- Version du serveur :  10.4.18-MariaDB
 -- Version de PHP : 8.0.3
 
@@ -65,9 +65,11 @@ INSERT INTO `compteclub` (`id`, `name`, `birthday`, `slogan`, `phone`, `city`, `
 (618, 'Anim INSAT', '2000', 'Friends are a major part', 22222222, 'Tunis', '8h->18h', '15Dt', '', 'Anim INSAT provides the best integration for newcomers and the most jovial atmosphere to endure the stress of studying.', 'Centre urbain nord', '\r\nanim.insat.169@gmail.com', 'https://www.facebook.com/486500624703013/videos/1696380597048337', 'https://www.facebook.com/486500624703013/videos/1715287605157636', 'https://www.facebook.com/AnimInsat/?ref=page_internal', 'https://www.twitter.com', 'https://www.instagram.com', 'https://www.linkedin.com/?trk=people-guest_nav-header-logo', 'https://www.youtube.com/', '/assets/img/Clubs/anim/anim.jpg', '/assets/img/Clubs/anim/anim.jpg', 'Animation', 'bg-gradient-purple-magenta'),
 (619, 'Symbio INSAT', '2022', 'Future of the Biotechnology', 22222222, 'Tunis', 'Always Open\r\n', '15Dt', '.', 'Symbio is a biology club at INSAT. We offer industrial and ecological tours, but above all, we give students the chance to have training. We also have an event component.', 'Centre urbain nord', '\r\nsymbioinsat@gmail.com', '.', '.', 'https://www.facebook.com/symbioinsatclub', 'https://www.twitter.com', 'https://www.instagram.com', 'https://www.linkedin.com/?trk=people-guest_nav-header-logo', 'https://www.youtube.com', '/assets/img/Clubs/symbio/symbio.png', '/assets/img/Clubs/symbio/symbio.png', 'Biology', 'bg-gradient-magenta-orange-2'),
 (620, 'Ciné-Radio', '2022', 'Music feeds the heart', 22222222, 'Tunis', '8h->18h', '15Dt', '.', 'Cultural and event club. We are working to give all Tunisian students the chance to be heard and to display their talents.', 'Centre urbain nord', 'contact@cineradioinsat.com', 'https://www.youtube.com/watch?v=_JQIuczgu2c', 'https://www.youtube.com/watch?v=VmpTbMyc_aY', 'https://www.linkedin.com/?trk=people-guest_nav-header-logo', 'https://www.twitter.com', 'Instagram.com/cineradio_insat/', 'https://www.linkedin.com/?trk=people-guest_nav-header-logo', 'https://www.youtube.com/channel/UCM40-Ihu3M6keDKrwtioxjA', '/assets/img/Clubs/cineradio/cineradio.jpg', '/assets/img/Clubs/cineradio/cineradio.jpg', 'Culture', 'bg-gradient-peacock-blue-crome-yellow'),
-(1000, 'IEEE INSAT SB', 'January 2nd 2013', 'Advancing Technology for humanity', 93114913, 'Centre Urbain Nord', '-', '80dt', '-', 'IEEE Student Branch at National Institute of Applied Science and Technology', '676 INSAT Centre Urbain Nord BP، Tunis Cedex 1080', 'ieee.insat.sb@gmail.com', 'https://www.youtube.com/watch?v=VL6b7l_1V1I', 'https://www.youtube.com/watch?v=AFj91p6-g7I', 'https://www.facebook.com/IeeeInsatStudentBranch/', 'https://twitter.com/ieee_insat_sb', 'https://www.instagram.com/ieee.insat.sb/', 'https://www.linkedin.com/company/ieee-insat-student-branch/', 'https://www.youtube.com/channel/UCVK9F0-8FL8x8UpKMmgqOgw', '/assets/img/Clubs/ieee/ieee.jpg', '/assets/img/Clubs/ieee/ieee.jpg', 'https://insat.ieee.tn/', 'blue'),
-(1001, 'Junior entreprise insat', '08/04/2005', 'Trust Tomorrow’s engineers', 58457575, 'Tunis', 'depends', '10dt', '-', 'La Junior Entreprise INSAT est une association à but non lucratif proposant des services dans le domaine de l\'IT.\r\nElle est fondée en 2005 et est gérée par les étudiants de l\'INSAT', 'Insat', 'junior.entreprise.insat@gmail.com', '-', '-', 'https://www.facebook.com/junior.entreprise.insat', '-', 'https://www.instagram.com/junior_entreprise_insat', 'https://www.linkedin.com/company/30099266/?fbclid=IwAR1Wrwt4-peoiWnNJ67OPQlTLCc9ufKSr_-BUrTi0s6Hggwmet4yN-qULKM', 'https://www.youtube.com/channel/UCmNCQRBMVP_RzhWZjnJfUPA', '/assets/img/Clubs/jei/jei.jpg', '/assets/img/Clubs/jei/jei.jpg', 'Web & Mobile Development - Entrepreneurship', 'Red and Blue'),
-(1002, 'ACM', '2015', 'the future of IT', 22222222, 'INSAT', '24', '10', '', 'ACM is an IT club of INSAT. The most awarded club since 2015.', 'INSAT', '', '', '', 'https://www.facebook.com/insatacm/', '', '', '', '', '/assets/img/Clubs/ACM/acm.jpg', '/assets/img/Clubs/ACM/acm.jpg', 'IT', 'Blue and white');
+(1000, 'IEEE INSAT SB', 'January 2nd 2013', 'Advancing Technology for humanity', 93114913, 'Centre Urbain Nord', '-', '80dt', '-', 'IEEE Student Branch at National Institute of Applied Science and Technology', '676 INSAT Centre Urbain Nord BP، Tunis Cedex 1080', 'ieee.insat.sb@gmail.com', 'https://www.youtube.com/watch?v=VL6b7l_1V1I', 'https://www.youtube.com/watch?v=AFj91p6-g7I', 'https://www.facebook.com/IeeeInsatStudentBranch/', 'https://twitter.com/ieee_insat_sb', 'https://www.instagram.com/ieee.insat.sb/', 'https://www.linkedin.com/company/ieee-insat-student-branch/', 'https://www.youtube.com/channel/UCVK9F0-8FL8x8UpKMmgqOgw', '/assets/img/Clubs/ieee/ieee.jpg', '/assets/img/Clubs/ieee/ieee.jpg', 'https://insat.ieee.tn/', 'bg-gradient-peacock-blue-crome-yellow'),
+(1001, 'Junior entreprise insat', '08/04/2005', 'Trust Tomorrow’s engineers', 58457575, 'Tunis', 'depends', '10dt', '-', 'La Junior Entreprise INSAT est une association à but non lucratif proposant des services dans le domaine de l\'IT.\r\nElle est fondée en 2005 et est gérée par les étudiants de l\'INSAT', 'Insat', 'junior.entreprise.insat@gmail.com', '-', '-', 'https://www.facebook.com/junior.entreprise.insat', '-', 'https://www.instagram.com/junior_entreprise_insat', 'https://www.linkedin.com/company/30099266/?fbclid=IwAR1Wrwt4-peoiWnNJ67OPQlTLCc9ufKSr_-BUrTi0s6Hggwmet4yN-qULKM', 'https://www.youtube.com/channel/UCmNCQRBMVP_RzhWZjnJfUPA', '/assets/img/Clubs/jei/jei.jpg', '/assets/img/Clubs/jei/jei.jpg', 'Web & Mobile Development - Entrepreneurship', 'bg-gradient-peacock-blue-crome-yellow'),
+(1002, 'ACM', '2015', 'the future of IT', 22222222, 'INSAT', '24', '10', '', 'ACM is an IT club of INSAT. The most awarded club since 2015.', 'INSAT', '', '', '', 'https://www.facebook.com/insatacm/', '', '', '', '', '/assets/img/Clubs/ACM/acm.jpg', '/assets/img/Clubs/ACM/acm.jpg', 'IT', 'bg-gradient-peacock-blue-crome-yellow'),
+(1003, 'CIM', '2013', 'Maintenance is life', 28239787, 'tunis', '8h->18h', '15Dt', 'First maintenance club', 'the INSAT Maintenance Club (CIM) aims to complete the training of future engineers through industrial visits, professional training and applications in the field of automation.', 'Centre urbain nord', '\r\nclub.insat.maintenace@gmail.com', 'https://www.youtube.com/watch?v=El-SJmkGP3c', 'https://www.youtube.com/watch?v=El-SJmkGP3c', 'https://www.facebook.com/Club.Insat.Maintenance/?ref=page_internal', 'https://www.twitter.com/', 'club_insat_maintenance\r\n', 'https://www.linkedin.com/', 'https://www.youtube.com/', '/assets/img/cim/img3.jpg', '/assets/img/cim/img4.jpg', 'Maintenance', 'bg-gradient-peacock-blue-crome-yellow'),
+(1004, 'AeRobotiX INSAT', '2012', 'Learn Create Innovate', NULL, 'Tunis', 'from 8 Am to 8 PM', '25 DT', 'The Aeronotic and Robotique Pole in INSAT', 'The AeRobotiX club is a scientific club which operates in the realization of robotic and automated applications.', 'INSAT Tunis', 'contact@aerobotix.com', 'https://www.youtube.com/watch?v=djnbGdg-QCo&t=39s', 'https://www.youtube.com/watch?v=6y8U2HpewFk&t=4s', 'https://www.facebook.com/AeRobotiX.INSAT/', 'https://twitter.com/aerodaytn', 'https://www.instagram.com/aerobotix.insat/?hl=fr', 'https://www.linkedin.com/company/aerobotix-insat', 'https://www.youtube.com/channel/UCZtQW0BOm6qadKO5XRqDskA', '/assets/img/Clubs/aerobotix/aerobotix.jpg', '/assets/img/Clubs/aerobotix/aerobotix.jpg', 'Robotics and Aeromodelling', 'bg-transparent-gradient-light-red-orange');
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,13 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210613131549', '2021-06-14 00:01:48', 261),
 ('DoctrineMigrations\\Version20210613153501', '2021-06-14 00:01:49', 123),
 ('DoctrineMigrations\\Version20210613155428', '2021-06-14 00:01:49', 83),
-('DoctrineMigrations\\Version20210613221148', '2021-06-14 00:12:05', 3111);
+('DoctrineMigrations\\Version20210613213646', '2021-06-14 02:38:58', 1329),
+('DoctrineMigrations\\Version20210613214028', '2021-06-14 02:38:59', 128),
+('DoctrineMigrations\\Version20210613221148', '2021-06-14 00:12:05', 3111),
+('DoctrineMigrations\\Version20210613231054', '2021-06-14 02:38:59', 5432),
+('DoctrineMigrations\\Version20210613234659', '2021-06-14 02:39:05', 173),
+('DoctrineMigrations\\Version20210614005448', '2021-06-14 02:56:45', 1529),
+('DoctrineMigrations\\Version20210614005916', '2021-06-14 02:59:24', 2853);
 
 -- --------------------------------------------------------
 
@@ -133,7 +141,14 @@ INSERT INTO `event` (`id`, `name`, `img1`, `img2`, `description`, `filter`, `clu
 (991, 'INSAT press Music day', '/assets/img/Clubs/press/Press.png', '/assets/img/Clubs/press/Press.png', 'Press Music day.', 'Competition', 615),
 (992, 'JEI Presentation day', '/assets/img/Clubs/jei/jei.jpg', '/assets/img/Clubs/jei/jei.jpg', 'JEI presentation day', 'Meeting', 1001),
 (993, 'Symbio Chemicals Day', '/assets/img/Clubs/symbio/symbio.png', '/assets/img/Clubs/symbio/symbio.png', 'Symbio Chemicals Day', 'Competition', 619),
-(994, 'Theatro', '/assets/img/Clubs/theatro/Theatro.jpg', '/assets/img/Clubs/theatro/Theatro.jpg', 'Theatro day', 'Fun', 617);
+(994, 'Theatro', '/assets/img/Clubs/theatro/Theatro.jpg', '/assets/img/Clubs/theatro/Theatro.jpg', 'Theatro day', 'Fun', 617),
+(995, 'Xtreme', '/assets/img/Clubs/ieee/events/2ieee-xtreme-logo.png', '/assets/img/Clubs/ieee/events/xtreme_2.jpg', 'Xtreme is a 24-hour competition built on the concept of competitive programming, individual or team resolution of well-defined problems by programming according to very precise specifications.', 'competition', 1000),
+(996, 'BIOIT', '/assets/img/Clubs/ieee/events/bioit.jpg', '/assets/img/Clubs/ieee/events/bioit.jpg', 'BIOIT « BIOlogy and Information Technology » is a grand contest that aims to combine and develop overarching domains that complement each other: Biology, medicine, agriculture and agronomy on one hand, and IT on the other hand. It simply searches to digit', 'competition', 1000),
+(999, 'Summer school', '/assets/img/Clubs/ieee/summer_school_1.png', '/assets/img/Clubs/ieee/summer_school_2.jpg', 'A great way to start the academic year and an amazing opportunity for freshmen to discover the IEEE family and its astounding activities.\r\nMany workshops, online conferences and even surprises are waiting for you.', 'training', 1000),
+(1001, 'JTI', '/assets/img/Clubs/theatro/events/JTI_1.jpg', '/assets/img/Clubs/theatro/events/JTI_2.jpg', 'theatrical day of the national institute of applied science and technology', 'Fun', 617),
+(1003, 'AddictMUN', '/assets/img/Clubs/events/addictMUN.jpg', '/assets/img/Clubs/events/addictMUN.jpg', 'As part of the United Nations Modeling, students take on the role of ambassadors or foreign ministers by participating in simulations of international sections of the United Nations.', 'training', NULL),
+(1004, 'Fast & Furious', '/assets/img/Clubs/autoclub/events/fast_and_furious_1.jpg', '/assets/img/Clubs/autoclub/events/fast_and_furious_2.jpg', 'Fast and Furious is a robotic competition that includes a drift competition, a rally competition, a formula competition, a cad challenge and a design challenge.', 'competition', 614),
+(1006, 'Dummy Challenge', '/assets/img/Clubs/ACM/events/dummy_challenge.jpg', '/assets/img/Clubs/ACM/events/dummy_challenge_2.jpg', 'TCPC Competition is coming up, so in preparation for that, we have decided to do a Dummy Challenge!\r\nWe will test the competitive programming skills you acquired with a set of problems, It will be a mini-challenge for those who want to accept the challeng', 'competition', 1002);
 
 -- --------------------------------------------------------
 
@@ -163,6 +178,28 @@ INSERT INTO `field` (`id`, `name`, `pourcentage`, `club_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `news_feed`
+--
+
+CREATE TABLE `news_feed` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `club_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `news_feed`
+--
+
+INSERT INTO `news_feed` (`id`, `name`, `text`, `img`, `club_id`) VALUES
+(1, 'Competetion', 'textyyyyy', '/assets/img/Clubs/cineradio/cineradio.jpg', 619),
+(2, 'training', 'textyyy 2', '/assets/img/Clubs/cineradio/cineradio.jpg', 617);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `product`
 --
 
@@ -182,11 +219,38 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `img1`, `img2`, `prix`, `description`, `club_id`, `filter`) VALUES
-(1501, 'Aerobotix Hoodie', '/assets/img/Product/hoodieaer3.png', '/assets/img/Product/hoodieaer2.png', 35, 'Blue Winter Hoodie', 1001, NULL),
+(1501, 'Aerobotix Hoodie', '/assets/img/Product/hoodieaer3.png', '/assets/img/Product/hoodieaer2.png', 35, 'Blue Winter Hoodie', 1004, NULL),
 (1502, 'Securonets Hoodie', '/assets/img/Product/securinets.png', '/assets/img/Product/securinets2.png', 35, 'Red Winter Hoodie', 616, NULL),
 (1503, 'Acm Hoodie', '/assets/img/Product/acm11.png', '/assets/img/Product/acm2.png', 35, 'Blue Winter Hoodie', 618, NULL),
-(1504, 'Impression 3D', '/assets/img/Product/impr2.png', '/assets/img/Product/impr1.png', 2, 'Impression de pièces 3d par gramme avec PLA', 1000, NULL),
-(1505, 'T-Shirt', '/assets/img/Clubs/Aerobotix/products/prod2.png', '/assets/img/Clubs/Aerobotix/products/prod2.png', 28, 'Summer Black T-Shirt', 1002, NULL);
+(1504, 'Impression 3D', '/assets/img/Product/impr2.png', '/assets/img/Product/impr1.png', 2, 'Impression de pièces 3d par gramme avec PLA', 1004, NULL),
+(1505, 'T-Shirt', '/assets/img/Clubs/Aerobotix/products/prod2.png', '/assets/img/Clubs/Aerobotix/products/prod2.png', 28, 'Summer Black T-Shirt', 1004, NULL),
+(1508, 'IEEE T-Shirt', '/assets/img/Clubs/ieee/product/img1.jpg', '/assets/img/Clubs/ieee/product/img1.jpg', 35, 'Blue T-shirt\r\n', 1000, ' '),
+(1509, 'IEEE PES Hoodie', '/assets/img/Clubs/ieee/product/img2.jpg', '/assets/img/Clubs/ieee/product/img2.jpg', 35, 'Grey hoodie', 1000, ' '),
+(1510, 'CIM T-Shirt', '/assets/img/Clubs/cim/product/img1.jpg', '/assets/img/Clubs/cim/product/img2.jpg', 35, 'T-shirt', 1003, ' '),
+(1511, 'AutoClub T-Shirt', '/assets/img/Clubs/autoclub/product/img1.jpg', '/assets/img/Clubs/autoclub/product/img1.jpg', 35, 'T-shirt', 614, ' ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `publication`
+--
+
+CREATE TABLE `publication` (
+  `id` int(11) NOT NULL,
+  `club_id` int(11) DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `posted_at` datetime NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `publication`
+--
+
+INSERT INTO `publication` (`id`, `club_id`, `title`, `content`, `posted_at`, `image`) VALUES
+(1, 619, 'waaa sahbii', 'aklzo aojfh iafghaei fozdhg ozh gvSG', '2021-06-14 11:56:29', '/assets/img/Clubs/cineradio/cineradio.jpg'),
+(2, 617, 'ahlin', 'df qdf hqdfhqd qdf jqdh*\r\ndsg\r\nqdf\r\nh\r\nqdfh\r\ndf\r\nhd\r\nh\r\nd', '2021-06-14 11:56:29', '/assets/img/Clubs/cineradio/cineradio.jpg');
 
 -- --------------------------------------------------------
 
@@ -265,39 +329,24 @@ INSERT INTO `user` (`id`, `fullname`, `email`, `phone`, `address`, `twitter`, `i
 (22, 'Wafé Selmy\r\n', 'wafe.selmy@insat.u-carthage.tn', 22222222, 'INSAT', 'www.twitter.com', 'www.instagram.com', 'https://www.facebook.com/nffgg', 'GL3', '-', 'Membre JEI', '/assets/img/Clubs/JEI/wafeselmy.jpeg', '', '', NULL),
 (23, 'Med Ali Jardak', 'med.ali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'RT4', '', 'Membre', '/assets/img/Clubs/JEI/medali.jpeg', '', '', NULL),
 (24, 'Sarah Benabdallah', 'sarah.ben@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'RT3', '', 'Membre', '/assets/img/Clubs/JEI/sarah.jpeg', '', '', NULL),
-(25, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', '/assets/img/Clubs/ACM/bechir.jpeg', '', '', NULL),
-(26, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/ACM/hamdouni.jpeg', '', '', NULL),
-(31, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/ACM/onssellami.jpeg', '', '', NULL),
-(32, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/ACM/naim.jpeg', '', '', NULL),
-(33, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/press/bechir.jpeg', '', '', NULL),
-(34, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/press/hamdouni.jpeg', '', '', NULL),
-(35, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/press/onssellami.jpeg', '', '', NULL),
-(36, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/press/naim.jpeg', '', '', NULL),
-(37, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/theatro/bechir.jpeg', '', '', NULL),
-(38, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/theatro/hamdouni.jpeg', '', '', NULL),
-(39, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/theatro/onssellami.jpeg', '', '', NULL),
-(40, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/theatro/naim.jpeg', '', '', NULL),
-(41, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/anim/bechir.jpeg', '', '', NULL),
-(42, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/anim/hamdouni.jpeg', '', '', NULL),
-(43, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/anim/onssellami.jpeg', '', '', NULL),
-(44, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/anim/naim.jpeg', '', '', NULL),
-(45, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/symbio/bechir.jpeg', '', '', NULL),
-(46, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/symbio/hamdouni.jpeg', '', '', NULL),
-(47, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/symbio/onssellami.jpeg', '', '', NULL),
-(48, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/symbio/naim.jpeg', '', '', NULL),
-(49, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/ieee/bechir.jpeg', '', '', NULL),
-(50, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/ieee/hamdouni.jpeg', '', '', NULL),
-(51, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/ieee/onssellami.jpeg', '', '', NULL),
-(52, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/ieee/naim.jpeg', '', '', NULL),
-(53, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/cine/bechir.jpeg', '', '', NULL),
-(54, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/cine/hamdouni.jpeg', '', '', NULL),
-(55, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/cine/onssellami.jpeg', '', '', NULL),
-(56, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/cine/naim.jpeg', '', '', NULL),
 (57, 'Bechir Brahem', 'bechir.brahem@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'President', 'assets/img/Clubs/auto/bechir.jpeg', '', '', NULL),
-(58, 'Med amine hamdouni', 'medamine.hamdouni@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/auto/hamdouni.jpeg', '', '', NULL),
 (59, 'Ons Sellami\r\n', 'ons.sellami@insat.u-carthage.tn', 22222222, 'insat', '', '', '', '', '', 'Membre', '/assets/img/Clubs/auto/onssellami.jpeg', '', '', NULL),
-(60, 'Naim Dali', 'naim.dali@insat.u-carthage.tn', 22222222, 'insat', '', '', '', 'GL2', '', 'Membre', '/assets/img/Clubs/auto/naim.jpeg', '', '', NULL),
-(61, 'new', 'new@new.new', 22222222, 'new', 'www.twitter.com', 'www.instagram.com', 'www.facebook.com', NULL, NULL, NULL, NULL, '$argon2id$v=19$m=65536,t=4,p=1$M05Ib1dxb1BqV0sxNmZLUQ$BNKa8klz80U8kEUuvbLEVOgZ854EVYEq4/OWEcWCoPM', '[\"ROLE_USER\"]', NULL);
+(61, 'ines ouled elhaj', 'inesouledelhaj@insat.u-carthage.tn', 22222222, 'Tunis', 'www.twitter.com', 'www.instagram.com', 'https://web.facebook.com/ines.ouledelhaj', 'GL4', 'ACM member, Hard Working and dedicated, Team player and willing to to win.', 'Community Manager', '/assets/img/Clubs/acm/Community Manager.jpg', '', '', NULL),
+(62, 'Bechir Brahem', 'bechirbrahem@insat.u-carthage.tn', 22222222, 'sousse', 'www.twitter.com', 'https://www.instagram.com/bechirbrahem/', 'https://www.facebook.com/bechir.00.brahem', 'GL', 'ACM member, Hard Working and dedicated, Team player and willing to to win.', 'HR Manager', '/assets/img/Clubs/acm/bechir.jpg', '', '', NULL),
+(63, 'Mohamed Taieb Slama', 'mohamedtaiebslama@insat.u-carthage.tn', 22222222, 'Manouba', 'www.twitter.com', 'www.instagram.com', 'https://www.facebook.com/mohamedtaieb.slama', '+modify me', 'ACM member, hard working and dedicated Webmaster.', 'Webmaster', '/assets/img/Clubs/acm/Webmaster.jpg', '', '', NULL),
+(64, 'Amir Khemissi', 'amirkhemissi@insat.u-carthage.tn', 22222222, 'Tunis', 'www.twitter.com', 'https://www.instagram.com/amir.khemissi/', 'https://www.facebook.com/khemissi.tn', 'RT3', 'ACM member, hard working and dedicated Treasurer.', 'Treasurer', '/assets/img/Clubs/acm/treasurer.jpg', '', '', NULL),
+(65, 'Meriem Zhang', 'meriemzhang@insat.u-carthage.tn', 22222222, 'Tunis', 'www.twitter.com', 'www.instagram.com', 'https://www.facebook.com/meryem.zhang', 'GL4', 'ACM member, hard working and dedicated president.', 'President', '/assets/img/Clubs/acm/presidente.jpg', '', '', NULL),
+(66, 'Ons Sellami', 'onssellami@insat.u-carthage.tn', 22222222, 'Tunis', 'www.twitter.com', 'www.instagram.com', 'https://www.facebook.com/ons.sellami.8', '+modify me', 'ACM member, hard working and dedicated vice president.', 'Vice President', '/assets/img/Clubs/acm/unknown.jpg', '', '', NULL),
+(67, 'Yasmine Doss', 'yasminedoss@insat.u-carthage.tn', 22222222, 'Ksar Hellal', 'www.twitter.com', 'https://www.instagram.com/yasmine_doss/', 'https://www.facebook.com/doss.yasmine', 'IIA2', 'ACM member, hard working and dedicated general secretary.', 'General Secretairy', '/assets/img/Clubs/acm/general secretairy.jpg', '', '', NULL),
+(68, 'Ahmed Dhia Labidi', 'ahmeddhialabidi@insat.u-carthage.tn', 22222222, 'Djerba', 'www.twitter.com', 'www.instagram.com', 'https://www.facebook.com/Ahmed.Dhia.Labidi', 'IIA2', 'ACM member, hard working and dedicated media manager.', 'Media Manager', '/assets/img/Clubs/acm/media manager.jpg', '', '', NULL),
+(69, 'Achraf Karboul', 'achrafkarboul@insat.u-carthage.tn', 22222222, 'Djerba-Mednine', 'www.twitter.com', 'https://www.instagram.com/achrafkarboul/', 'https://www.facebook.com/achraf.karboul.1', 'IIA2', 'ACM member, hard working and dedicated manager.', 'Logistics Manager', '/assets/img/Clubs/acm/logistic manager.jpg', '', '', NULL),
+(70, 'KARIM KHAMESSY', 'karimkhamessy@insat.u-carthage.tn', 22222222, 'El Kef', 'www.twitter.com', 'https://www.instagram.com/karim_khamessy/', 'https://www.facebook.com/karimkhamessy', 'RT4', 'AutoClub member, hard working and dedicated president', 'President', '/assets/img/Clubs/autoclub/president.jpg', '', '', NULL),
+(71, 'CHAIMA EL ARBI', 'chaimaelarbi@insat.u-carthage.tn', 22222222, 'sfax', 'www.twitter.com', 'https://www.instagram.com/chaima_el_arbi/', 'https://www.facebook.com/chaima.arbi.3', 'IIA4', 'AutoClub member, hard working and dedicated Vice-President.', 'Vice President', '/assets/img/Clubs/autoclub/vice president.jpg', '', '', NULL),
+(72, 'WISSEM YAKOUBI', 'wissemyakoubui@insat.u-carthage.tn', 22222222, 'Tunis', 'www.twitter.com', 'https://www.instagram.com/wissemyakoubi/', 'https://www.facebook.com/wissem.yakoubi.731', 'IIA4', 'AutoClub member, hard working and dedicated general secretairy.', 'General Sectretairy', '/assets/img/Clubs/autoclub/general secretairy.jpg', '', '', NULL),
+(73, 'HASSAN KAABECHI', 'hassankaabechi@insat.u-carthage.tn', 22222222, 'Seliana', 'www.twitter.com', 'https://www.instagram.com/kaabechi.2222/', 'https://www.facebook.com/hassan.kaabechi.3', 'IMI2', 'AutoClub member, hard working and dedicated media manager.', 'Media Manager', '/assets/img/Clubs/autoclub/media manager.jpg', '', '', NULL),
+(74, 'MOHAMED FIRAS MOHAMED', 'mohamedfirasmohamed@insat.u-carthage.tn', 22222222, 'zaghouan', 'www.twitter.com', 'https://www.instagram.com/mohamedmohamedfiras/', 'https://www.facebook.com/mohamed.mohamedfiras', 'IMI2', 'AutoClub member, hard working and dedicated humain ressources manager.', 'Humain Ressources Manager', '/assets/img/Clubs/autoclub/humain ressources.jpg', '', '', NULL),
+(75, 'FARAH HAMRAOUI', 'farahhamraoui@insat.u-carthage.tn', 22222222, 'Radès', 'www.twitter.com', 'https://www.instagram.com/farahhamraoui/', 'https://www.facebook.com/farah.hamraoui1', 'IIA3', 'AutoClub member, hard working and dedicated Treasurer.', 'Treasurer', '/assets/img/Clubs/autoclub/treasurer.jpg', '', '', NULL),
+(76, 'aa', 'aa@aa.aa', 22125215, 'aa', 'www.twitter.com', 'www.instagram.com', 'www.facebook.com', NULL, NULL, NULL, NULL, '$argon2id$v=19$m=65536,t=4,p=1$ZFhUSk03TkhTZlI1N1p2Rg$lmaSypOh0AC7IarhfQW3gFZuXqK9IaKzxw8kWKdLhdk', '\"[\\\"ROLE_USER\\\"]\"', NULL);
 
 -- --------------------------------------------------------
 
@@ -309,6 +358,14 @@ CREATE TABLE `user_compteclub` (
   `user_id` int(11) NOT NULL,
   `compteclub_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user_compteclub`
+--
+
+INSERT INTO `user_compteclub` (`user_id`, `compteclub_id`) VALUES
+(76, 617),
+(76, 619);
 
 -- --------------------------------------------------------
 
@@ -352,11 +409,25 @@ ALTER TABLE `field`
   ADD KEY `IDX_5BF5455861190A32` (`club_id`);
 
 --
+-- Index pour la table `news_feed`
+--
+ALTER TABLE `news_feed`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_F69DB22061190A32` (`club_id`);
+
+--
 -- Index pour la table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `IDX_D34A04AD61190A32` (`club_id`);
+
+--
+-- Index pour la table `publication`
+--
+ALTER TABLE `publication`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_AF3C677961190A32` (`club_id`);
 
 --
 -- Index pour la table `statistique`
@@ -395,13 +466,13 @@ ALTER TABLE `user_event`
 -- AUTO_INCREMENT pour la table `compteclub`
 --
 ALTER TABLE `compteclub`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 
 --
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=995;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1007;
 
 --
 -- AUTO_INCREMENT pour la table `field`
@@ -410,10 +481,22 @@ ALTER TABLE `field`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT pour la table `news_feed`
+--
+ALTER TABLE `news_feed`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1506;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1512;
+
+--
+-- AUTO_INCREMENT pour la table `publication`
+--
+ALTER TABLE `publication`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `statistique`
@@ -425,7 +508,7 @@ ALTER TABLE `statistique`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Contraintes pour les tables déchargées
@@ -444,10 +527,22 @@ ALTER TABLE `field`
   ADD CONSTRAINT `FK_5BF5455861190A32` FOREIGN KEY (`club_id`) REFERENCES `compteclub` (`id`);
 
 --
+-- Contraintes pour la table `news_feed`
+--
+ALTER TABLE `news_feed`
+  ADD CONSTRAINT `FK_F69DB22061190A32` FOREIGN KEY (`club_id`) REFERENCES `compteclub` (`id`);
+
+--
 -- Contraintes pour la table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `FK_D34A04AD61190A32` FOREIGN KEY (`club_id`) REFERENCES `compteclub` (`id`);
+
+--
+-- Contraintes pour la table `publication`
+--
+ALTER TABLE `publication`
+  ADD CONSTRAINT `FK_AF3C677961190A32` FOREIGN KEY (`club_id`) REFERENCES `compteclub` (`id`);
 
 --
 -- Contraintes pour la table `statistique`

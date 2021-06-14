@@ -129,10 +129,30 @@ class ClubsController extends AbstractController
 
         ]);
     }
-    #[Route('/newsfeed', name: 'newsfeed')]
-    public function newsfeed(): Response {
-        return $this->render('clubs/newsfeed.html.twig', []);
+ 
+    #[Route('/publications', name: 'newsfeed')]
+    public function publications(compteclubRepository $repo): Response {
+        $feeds=[];
+        $user= new User();
+        $user=$this->getUser();
+        $club=new compteclub();
+        $club->getPublications();
+        $clubs=$user->getClubs();
+
+      //  dd($clubs);
+        foreach ($clubs as $club){
+
+            $news=$club->getPublications()->getValues();
+               $feeds=array_merge($feeds,$news);
+        }
+
+        return $this->render('clubs/newsfeed.html.twig', [
+            'newsfeed'=>$feeds
+        ]);
     }
+
+
+
     #[Route('/post', name: 'post')]
     public function post(EntityManagerInterface $manager, Request $request): Response {
         $this->denyAccessUnlessGranted('ROLE_CLUB');
