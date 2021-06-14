@@ -79,7 +79,7 @@ class ClubsController extends AbstractController
         $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
         $events = $club->getEvents();
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-        $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
+       // $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
 
         $user=$this->getUser();
         $eventsnames = [];
@@ -101,7 +101,7 @@ class ClubsController extends AbstractController
         }
 
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
-      //  $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
+        $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
@@ -114,6 +114,7 @@ class ClubsController extends AbstractController
 
         ]);
     }
+    dsqfgqdgqsgqsgqsg
 
     #[Route('/home', name: 'home')]
     public function home(): Response {
