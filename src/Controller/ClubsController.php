@@ -189,6 +189,7 @@ class ClubsController extends AbstractController
 
     #[Route('/myclub', name: 'myclub')]
     public function myclub() {
+        $this->denyAccessUnlessGranted('ROLE_CLUB');
         $user = $this->getUser();
         return $this->redirectToRoute('club', ['clubname' => $user->getClubname()]);
     }
