@@ -59,6 +59,7 @@
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "account"  %}active{% endif %}" href={{ path('account')}}>Account</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "logout"  %}active{% endif %}"  href={{ path('logout')}}>Logout</a></li>
                         {% else %}
+                            <li><a class="nav-link {% if app.request.attributes.get('_route') == "clubs"  %}active{% endif %}" href={{ path('clubs')}}>Clubs</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "products"  %}active{% endif %}" href={{ path('products')}}>Products</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "events"  %}active{% endif %}" href={{ path('events')}}>Events</a></li>
                             <li><a class="nav-link {% if app.request.attributes.get('_route') == "signup"   %}active{% endif %}"  href={{ path('signup')}}>Sign Up</a></li>

@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/insatclubs</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="insatclubs_2727@0ff9deed-0d4e-4237-8b85-1e148b15e0d0.insatclubs-2727.mysql.dbs.scalingo.com" uuid="8c23f0a6-91d1-4181-98b3-7cec8aa91d4f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://0ff9deed-0d4e-4237-8b85-1e148b15e0d0.insatclubs-2727.mysql.dbs.scalingo.com:34438/insatclubs_2727</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

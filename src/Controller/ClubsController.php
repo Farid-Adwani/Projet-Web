@@ -77,23 +77,28 @@ class ClubsController extends AbstractController
         $events = $club->getEvents();
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
+
         $user=$this->getUser();
-        $clubs=$user-> getClubs();
+        $eventsnames = [];
         $state='unfollowed';
-        foreach ($clubs as $cc){
-            if ($cc->getName()== $club->getName()) {
-                $state='followed';
-                break;
+        if($user!=null) {
+            $clubs = $user->getClubs();
+            foreach ($clubs as $cc) {
+                if ($cc->getName() == $club->getName()) {
+                    $state = 'followed';
+                    break;
+                }
+            }
+
+            $eventsuser = $user->getEvents();
+
+            foreach ($eventsuser as $ev) {
+                array_push($eventsnames, $ev->getName());
             }
         }
-        $eventsuser=$user->getEvents();
-        $eventsnames=[];
-        foreach($eventsuser as $ev){
-            array_push($eventsnames,$ev->getName());
-    }
 
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
-        $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
+      //  $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
