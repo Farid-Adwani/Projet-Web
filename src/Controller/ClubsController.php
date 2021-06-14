@@ -74,9 +74,9 @@ class ClubsController extends AbstractController
         $club = $this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name' => $clubname]);
         $statistiques = $this->getDoctrine()->getRepository(Statistique::class)->findAll();
         $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
-        $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-        $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
+        $events = $this->getDoctrine()->getRepository(Event::class)->findBy(["club"=>$club]);
+        $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
+        $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
 
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
