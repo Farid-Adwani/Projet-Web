@@ -74,8 +74,7 @@ class ClubsController extends AbstractController
         $club = $this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name' => $clubname]);
         $statistiques = $this->getDoctrine()->getRepository(Statistique::class)->findAll();
         $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
-<<<<<<< HEAD
-        $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
+        $events = $club->getEvents();
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
         $user=$this->getUser();
@@ -87,12 +86,14 @@ class ClubsController extends AbstractController
                 break;
             }
         }
-=======
-        $events = $this->getDoctrine()->getRepository(Event::class)->findBy(["club"=>$club]);
+        $eventsuser=$user->getEvents();
+        $eventsnames=[];
+        foreach($eventsuser as $ev){
+            array_push($eventsnames,$ev->getName());
+    }
+
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
         $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
-
->>>>>>> f228d8f44c18bd8924d0c0b861fb92985f0c3d09
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
@@ -100,7 +101,8 @@ class ClubsController extends AbstractController
             'fields'=>$fields,
             'events'=>$events,
             'products'=>$products,
-            'state'=>$state
+            'state'=>$state,
+            'eventsnames'=>$eventsnames
 
         ]);
     }
@@ -355,6 +357,26 @@ return $this->redirectToRoute('club',['clubname'=>$clubname]);
         $manager->persist($user);
         $manager->flush();
         return $this->redirectToRoute('club',['clubname'=>$clubname]);
+    }
+
+
+    #[Route('/followingsevent/{eventname}', name: 'followingsevent')]
+    public function followingsevent($eventname, EntityManagerInterface $manager){
+        $user=$this->getUser();
+        $event=$this->getDoctrine()->getRepository(Event::class)->findOneBy(['name'=>$eventname]);
+        $user->addEvent($event);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('club',['clubname'=>$event->getClub()->getName()]);
+    }
+    #[Route('/unfollowingsevent/{eventname}', name: 'unfollowingsevent')]
+    public function unfollowingsevent($eventname, EntityManagerInterface $manager){
+        $user=$this->getUser();
+        $event=$this->getDoctrine()->getRepository(Event::class)->findOneBy(['name'=>$eventname]);
+        $user->removeEvent($event);
+        $manager->persist($user);
+        $manager->flush();
+        return $this->redirectToRoute('club',['clubname'=>$event->getClub()->getName()]);
     }
 
 }
