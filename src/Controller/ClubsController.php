@@ -98,9 +98,11 @@ class ClubsController extends AbstractController
     public function account(): Response {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
+        $events=$user->getEvents();
+        $clubs=$user->getClubs();
 
-        $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
-        $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
+    //    $events=$this->getDoctrine()->getRepository(Event::class)->findAll();
+       // $clubs=$this->getDoctrine()->getRepository(compteclub::class)->findAll();
 
 
         return $this->render('clubs/Account.html.twig', [

@@ -130,7 +130,7 @@
                                     </style>
                                     <div class="vertical-menu">
                                         {% for club in clubs %}
-                                            <a href="#">{{ club.name}} </a>
+                                            <a href={{ path('club',{'clubname':club.getName()})}}>{{ club.name}} </a>
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@
                                     <h6 class="d-flex align-items-center mb-3"><i  style="color:#eb345b">upcoming events</i></h6>
                                     <div class="vertical-menu">
                                         {% for event in events %}
-                                        <a href="#">{{ event.name}} </a>
+                                        <a href={{ path('club',{'clubname':event.getClub().getName()})}}>{{ event.name}} </a>
                                         {% endfor %}
                                     </div>
                                 </div>
