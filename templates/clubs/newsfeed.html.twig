@@ -50,7 +50,7 @@
                         <img src="/assets/img/Clubs/cineradio/cineradio.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ feed.title }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ feed.getClub().name }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ feed.getClub().name }} <br>{{ feed.getPostedAt()|date('Y-m-d H:i:s')}} </h6>
                             <p class="card-text">{{ feed.content }}</p>
                             <a href={{ path('club',{'clubname':feed.getClub().getName()})}} class="btn mr-2"><i class="fas fa-link"></i> Visit The Club</a>
                         </div>
