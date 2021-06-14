@@ -74,6 +74,7 @@ class ClubsController extends AbstractController
         $club = $this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name' => $clubname]);
         $statistiques = $this->getDoctrine()->getRepository(Statistique::class)->findAll();
         $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
+<<<<<<< HEAD
         $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
@@ -86,6 +87,12 @@ class ClubsController extends AbstractController
                 break;
             }
         }
+=======
+        $events = $this->getDoctrine()->getRepository(Event::class)->findBy(["club"=>$club]);
+        $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
+        $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
+
+>>>>>>> f228d8f44c18bd8924d0c0b861fb92985f0c3d09
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
@@ -107,6 +114,7 @@ class ClubsController extends AbstractController
     public function account(): Response {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
+     //   dd($user);
         $events=$user->getEvents();
         $clubs=$user->getClubs();
 
@@ -240,7 +248,13 @@ class ClubsController extends AbstractController
     #[Route('/members', name: 'members')]
     public function members(ProductRepository $repo): Response {
         $this->denyAccessUnlessGranted('ROLE_CLUB');
-        return $this->render('clubs/members.html.twig', []);
+        $club=$this->getUser()->getClubName();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$club]);
+        $members=$club->getUsers();
+       // dd($members);
+        return $this->render('clubs/members.html.twig', [
+            'members'=>$members
+        ]);
     }
 
     #[Route('/clubinfo', name: 'clubinfo')]

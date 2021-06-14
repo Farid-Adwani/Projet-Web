@@ -323,7 +323,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        $rr=json_decode($this->roles);
+        $rr=json_decode($this->roles, true);
         return array_unique($rr);
     }
 
