@@ -12,8 +12,11 @@ use App\Repository\compteclubRepository;
 use App\Repository\EventRepository;
 use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
+use Faker\Test\Provider\ImageTest;
+use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use \App\Entity\compteclub;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -79,7 +82,7 @@ class ClubsController extends AbstractController
         $fields = $this->getDoctrine()->getRepository(Field::class)->findAll();
         $events = $club->getEvents();
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-       // $comite=$this->getDoctrine()->getRepository(User::class)->findAll();
+        //$comite=$this->getDoctrine()->getRepository(User::class)->findAll();
 
         $user=$this->getUser();
         $eventsnames = [];
@@ -102,6 +105,7 @@ class ClubsController extends AbstractController
 
         $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['club'=>$club]);
         $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$clubname]);
+       // dd($comite);
         return $this->render('clubPage/index.html.twig', parameters: [
             'comites'=>$comite,
             'club'=>$club,
@@ -114,7 +118,6 @@ class ClubsController extends AbstractController
 
         ]);
     }
-// members only for one club
 
     #[Route('/home', name: 'home')]
     public function home(): Response {
@@ -221,11 +224,15 @@ class ClubsController extends AbstractController
         $pub=new Publication();
         $form=$this->createFormBuilder($pub)->add('title', TextType::class, ['attr' => ['placeholder'=>'title', 'class'=> 'form-control']])
             ->add('content', TextareaType::class, ['attr' => ['placeholder'=>'content', 'class'=> 'form-control']])
-            ->add('image', TextType::class, ['attr' => ['placeholder'=>'image', 'class'=> 'form-control']])
+            ->add('image', FileType::class, ['attr' => ['placeholder'=>'image', 'class'=> 'form-control']])
             ->getForm();
-
         $form->handleRequest($request);
+
         if($form->isSubmitted()  && $form->isValid()) {
+            $image=$form->get('image')->getData();
+            $fichier = md5(uniqid()).'.'.$image->guessExtension();
+            $image->move($this->getParameter('img_directory'),$fichier);
+            $pub->setImage(("/assets/img/".$fichier));
             $pub->setPostedAt(new \DateTime());
             $pub->setClub($club);
             $manager->persist($pub);
@@ -266,8 +273,10 @@ class ClubsController extends AbstractController
         $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$club]);
         $members=$club->getUsers();
        // dd($members);
+        $comite=$this->getDoctrine()->getRepository(User::class)->findBy(['clubname'=>$club->getName()]);
         return $this->render('clubs/members.html.twig', [
-            'members'=>$members
+            'members'=>$members,
+            'comite'=>$comite
         ]);
     }
 
@@ -276,9 +285,8 @@ class ClubsController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_CLUB');
         $user=$this->getUser();
         $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$user->getClubname()]);
+       $oldClubName=$club->getName();
         $form=$this->createFormBuilder($club)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
-            ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
-            ->add('Img2', TextType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
             ->add('slogan', TextType::class, ['attr' => ['placeholder'=>'slogan', 'class'=> 'form-control']])
             ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
             ->add('phone', TextType::class, ['attr' => ['placeholder'=>'phone', 'class'=> 'form-control']])
@@ -300,8 +308,16 @@ class ClubsController extends AbstractController
             ->add('domain', TextType::class, ['attr' => ['placeholder'=>'domain', 'class'=> 'form-control']])
             ->add('color', TextType::class, ['attr' => ['placeholder'=>'color', 'class'=> 'form-control']])
             ->getForm();
+
             $form->handleRequest($request);
             if($form->isSubmitted()  && $form->isValid()) {
+                $users=$this->getDoctrine()->getRepository(User::class)->findAll();
+
+                foreach ($users as $u){
+                    if( $u->getClubname()==$oldClubName){
+                        $u->setClubname($club->getName());
+                    }
+                }
                 $manager->persist($club);
                 $manager->flush();
                 return $this->redirectToRoute('clubs');
@@ -316,15 +332,26 @@ class ClubsController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_CLUB');
         $event=new Event();
         $form=$this->createFormBuilder($event)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
-            ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
-            ->add('img2', TextType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
+            ->add('img1', FileType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
+            ->add('img2', FileType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
             ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
             ->add('filter', TextType::class, ['attr' => ['placeholder'=>'filter', 'class'=> 'form-control']])
             ->getForm();
-
+        $user=$this->getUser();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$user->getClubname()]);
+        $event->setClub($club);
         $form->handleRequest($request);
         if($form->isSubmitted()  && $form->isValid()) {
-            $event->setClub(null);
+            $image1=$form->get('img1')->getData();
+            $image2=$form->get('img2')->getData();
+            $fichier1 = md5(uniqid()).'.'.$image1->guessExtension();
+            $fichier2 = md5(uniqid()).'.'.$image2->guessExtension();
+
+            $image1->move($this->getParameter('img_directory'),$fichier1);
+            $image2->move($this->getParameter('img_directory'),$fichier2);
+          //  dd($image1);
+            $event->setImg1((("/assets/img/".$fichier1)));
+            $event->setImg2((("/assets/img/".$fichier2)));
             $manager->persist($event);
             $manager->flush();
             return $this->redirectToRoute('events');
@@ -337,15 +364,27 @@ class ClubsController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_CLUB');
         $product=new Product();
         $form=$this->createFormBuilder($product)->add('name', TextType::class, ['attr' => ['placeholder'=>'name', 'class'=> 'form-control']])
-            ->add('img1', TextType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
-            ->add('img2', TextType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
+            ->add('img1', FileType::class, ['attr' => ['placeholder'=>'first image URL', 'class'=> 'form-control']])
+            ->add('img2', FileType::class, ['attr' => ['placeholder'=>'second image URL', 'class'=> 'form-control']])
             ->add('prix', TextType::class, ['attr' => ['placeholder'=>'prix', 'class'=> 'form-control']])
             ->add('description', TextType::class, ['attr' => ['placeholder'=>'description', 'class'=> 'form-control']])
             ->getForm();
+        $user=$this->getUser();
+        $club=$this->getDoctrine()->getRepository(compteclub::class)->findOneBy(['name'=>$user->getClubname()]);
 
         $form->handleRequest($request);
         if($form->isSubmitted()  && $form->isValid()) {
-            $product->setClub(null);
+            $image1=$form->get('img1')->getData();
+            $image2=$form->get('img2')->getData();
+            $fichier1 = md5(uniqid()).'.'.$image1->guessExtension();
+            $fichier2 = md5(uniqid()).'.'.$image2->guessExtension();
+
+            $image1->move($this->getParameter('img_directory'),$fichier1);
+            $image2->move($this->getParameter('img_directory'),$fichier2);
+
+            $product->setImg1((("/assets/img/".$fichier1)));
+            $product->setImg2((("/assets/img/".$fichier2)));
+            $product->setClub($club);
             $manager->persist($product);
             $manager->flush();
             return $this->redirectToRoute('products');

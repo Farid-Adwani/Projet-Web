@@ -61,10 +61,19 @@
                 <td>{{ member.twitter }}</td>
                 <td>{{ member.instagram }}</td>
                 <td>{{ member.facebook }}</td>
-
-
-                {%  endfor %}
             </tr>
+            {%  endfor %}
+            {%  for member in comite %}
+                <tr>
+                    <td><img  style="width: 80px" src="{{ member.image }}"></td>
+                    <td>{{ member.fullname }} </td>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.phone }}</td>
+                    <td>{{ member.twitter }}</td>
+                    <td>{{ member.instagram }}</td>
+                    <td>{{ member.facebook }}</td>
+                </tr>
+            {%  endfor %}
             </tbody>
         </table>
 
